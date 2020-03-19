@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th=“http://www.thymeleaf.org”>
+<head>
+    <title>Navigation</title>
+    <!--2秒后跳转到自定义页面-->
+    <!-- 
+    <meta http-equiv="refresh" content="2; url=http://www.baidu.com" />
+     -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+    <script th:inline="javascript">
+    var serviceUrl = [[${serviceUrl}]];
+    console.log(serviceUrl);
+    function logout(){
+    	var adata = {};
+        var data = JSON.stringify(adata);
+        var logoutUrl = [[${serviceUrl}]] + "/cas/logout";
+        console.log(logoutUrl);
+        $.ajax(logoutUrl);
+    };
+    </script>
+</head>
+<body>
+    <p th:text="'当前用户:' + ${username}" />
+    <p th:text="'当前系统:' + ${appname}" />
+    <button style="background-color:#666666; display:none;" type="button" class="btn btn-danger btn-sm"  th:onclick="'javascript:logout()' ">登出</button>
+</body>
+</html>
