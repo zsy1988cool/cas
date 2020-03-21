@@ -48,7 +48,7 @@
 						</overlay>
 					</overlays>
 					<dependentWarExcludes>
-					**/services/*.json
+						**/services/*.json
 					</dependentWarExcludes>
 				</configuration>
 			</plugin>
@@ -64,13 +64,18 @@
 			<type>war</type>
 			<scope>runtime</scope>
 		</dependency>
-		<!--
 		<dependency>
 			<groupId>org.apereo.cas</groupId>
-			<artifactId>cas-server-support-json-service-registry</artifactId>
+			<artifactId>cas-server-support-pm-jdbc</artifactId>
 			<version>${cas.version}</version>
 		</dependency>
-		-->
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-jdbc-drivers</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<!-- <dependency> <groupId>org.apereo.cas</groupId> <artifactId>cas-server-support-json-service-registry</artifactId> 
+			<version>${cas.version}</version> </dependency> -->
 	</dependencies>
 
 	<properties>
