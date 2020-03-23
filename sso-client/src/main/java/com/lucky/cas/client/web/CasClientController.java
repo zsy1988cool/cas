@@ -55,10 +55,12 @@ public class CasClientController implements ApplicationContextAware {
 		String profile = getProfile();
 		String serviceUrl = getServiceUrl();
 		
+		String appName = "client1".equals(profile) ? "瑞幸OA系统" : "瑞幸EHR系统";
 		model.addAttribute("username", loginName);
-		model.addAttribute("appname", profile);
+		model.addAttribute("appname", appName);
 		model.addAttribute("serviceUrl", serviceUrl);
-		return "welcome";
+		//return "welcome";
+		return "index";
 	}
 	
 	@GetMapping("/logout")
@@ -68,7 +70,7 @@ public class CasClientController implements ApplicationContextAware {
 		session.invalidate();
 
 		String service = getServiceUrl();
-		String redirectUrl = "https://sso.lucky.net:8443/cas/logout?service=" + service + "/cas/welcome";
+		String redirectUrl = "https://sso.lucky.net:8443/sso-server/logout?service=" + service + "/cas/welcome";
 		response.sendRedirect(redirectUrl);
         //return "redirect:https://sso.lucky.net:8443/cas/logout?service=" + service + "/cas/welcome";
     }
