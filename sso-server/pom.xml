@@ -83,6 +83,18 @@
 			<artifactId>cas-server-support-ldap</artifactId>
 			<version>${cas.version}</version>
 		</dependency>
+		
+		<dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-pm-ldap</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-core-api-configuration-model</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
 	</dependencies>
 
 	<properties>
@@ -102,7 +114,7 @@
 			<id>sonatype-releases</id>
 			<url>http://oss.sonatype.org/content/repositories/releases/</url>
 			<snapshots>
-				<enabled>false</enabled>
+				<enabled>true</enabled>
 			</snapshots>
 			<releases>
 				<enabled>true</enabled>
