@@ -64,6 +64,8 @@
 			<type>war</type>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!-- 票据和会话放在redis缓存 -->
 		<dependency>
 			<groupId>org.apereo.cas</groupId>
 			<artifactId>cas-server-support-redis-ticket-registry</artifactId>
@@ -74,13 +76,13 @@
 			<artifactId>cas-server-webapp-session-redis</artifactId>
 			<version>${cas.version}</version>
 		</dependency>
-		<!-- <dependency> <groupId>org.apereo.cas</groupId> <artifactId>cas-server-support-pm-jdbc</artifactId> 
-			<version>${cas.version}</version> </dependency> <dependency> <groupId>org.apereo.cas</groupId> 
-			<artifactId>cas-server-support-jdbc-drivers</artifactId> <version>${cas.version}</version> 
-			</dependency> -->
 
-		<!-- <dependency> <groupId>org.apereo.cas</groupId> <artifactId>cas-server-support-json-service-registry</artifactId> 
-			<version>${cas.version}</version> </dependency> -->
+
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-ldap</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
 	</dependencies>
 
 	<properties>
@@ -121,7 +123,7 @@
 			<url>https://build.shibboleth.net/nexus/content/repositories/releases</url>
 		</repository>
 
-		<!--添加国内镜像源地址 -->
+		<!--添加国内镜像源地址 --> 
 		<repository>
 			<id>maven-ali</id>
 			<url>http://maven.aliyun.com/nexus/content/groups/public//</url>
