@@ -29,8 +29,11 @@
 
 <body>
     <script src="/js/three.js"></script>
-    <div th:text="'当前用户:' + ${username}" />
+    <div><a href="https://sso.lucky.client2.net:8002/cas/welcome" target="_blank" text="瑞幸EHR系统">瑞幸EHR系统</a></div>
+    <div th:text="'当前用户:' + ${username}" >
+    </div>
     <div th:text="${appname}" class="m">
+    
     </div>
     <script>
         var SEPARATION = 100,
