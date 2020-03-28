@@ -1,0 +1,7 @@
+{
+	"@class": "org.apereo.cas.support.saml.services.SamlRegisteredService",
+	"serviceId": "sso.lucky.client1.net",
+	"name": "OSamlService",
+	"id": 10000004,
+	"evaluationOrder" : 10
+}

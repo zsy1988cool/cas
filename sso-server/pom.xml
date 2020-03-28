@@ -116,8 +116,92 @@
 			<artifactId>cas-server-support-oauth-webflow</artifactId>
 			<version>${cas.version}</version>
 		</dependency>
-	</dependencies>
 
+		<!-- saml -->
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-saml</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-saml-core</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+<!-- 
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-saml-googleapps</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-saml-googleapps-core</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+-->
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-saml-idp</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-saml-idp-core</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-saml-idp-metadata</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-saml-idp-metadata-jpa</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-saml-idp-metadata-rest</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-saml-idp-ticket</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-saml-idp-web</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-saml-mdui</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-saml-mdui-core</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-saml-sp-integrations</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache</groupId>
+			<artifactId>xerces</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-jdbc-drivers</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+	</dependencies>
 
 	<properties>
 		<cas.version>5.3.15</cas.version>
@@ -161,6 +245,18 @@
 		<repository>
 			<id>maven-ali</id>
 			<url>http://maven.aliyun.com/nexus/content/groups/public//</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>maven-alfresco</id>
+			<url>https://artifacts.alfresco.com/nexus/content/repositories/public/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>

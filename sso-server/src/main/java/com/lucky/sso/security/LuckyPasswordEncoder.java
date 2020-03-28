@@ -6,6 +6,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 //import org.apereo.cas.configuration.model.support.pm.PasswordManagementProperties;
 //import org.apereo.cas.services.RegisteredServicesEventListener;
 
+import net.shibboleth.utilities.java.support.xml.BasicParserPool;
+import org.apache.xerces.util.SecurityManager;
+
 import org.apereo.cas.pm.web.flow.actions.VerifyPasswordResetRequestAction;
 public class LuckyPasswordEncoder implements PasswordEncoder {
 
