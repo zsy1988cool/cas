@@ -1,0 +1,13 @@
+{
+  "@class" : "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId" : "^(http|https|imaps)://sso.lucky.client2.net..*",
+  "name" : "OAService",
+  "id" : 10000002,
+  "description" : "This service definition authorizes OA serivice.",
+  "evaluationOrder" : 1,
+  "accessStrategy": {
+    "@class" : "org.apereo.cas.services.DefaultRegisteredServiceAccessStrategy",
+    "enabled" : false,
+    "ssoEnabled" : false
+    }
+}

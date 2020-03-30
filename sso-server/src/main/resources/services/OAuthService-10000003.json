@@ -1,8 +1,14 @@
 {
 	"@class": "org.apereo.cas.support.oauth.services.OAuthRegisteredService",
-	"clientId": "100001",
+	"clientId": "abc",
 	"clientSecret": "123456",
 	"serviceId": "^(https|http|imaps)://.*",
 	"name": "OAuthService",
-	"id": 10000003
+	"id": 10000003,
+	"evaluationOrder" : 10,
+	"accessStrategy": {
+    "@class" : "org.apereo.cas.services.DefaultRegisteredServiceAccessStrategy",
+    "enabled" : false,
+    "ssoEnabled" : false
+    }
 }

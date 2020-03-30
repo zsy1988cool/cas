@@ -128,18 +128,10 @@
 			<artifactId>cas-server-support-saml-core</artifactId>
 			<version>${cas.version}</version>
 		</dependency>
-<!-- 
-		<dependency>
-			<groupId>org.apereo.cas</groupId>
-			<artifactId>cas-server-support-saml-googleapps</artifactId>
-			<version>${cas.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apereo.cas</groupId>
-			<artifactId>cas-server-support-saml-googleapps-core</artifactId>
-			<version>${cas.version}</version>
-		</dependency>
--->
+		<!-- <dependency> <groupId>org.apereo.cas</groupId> <artifactId>cas-server-support-saml-googleapps</artifactId> 
+			<version>${cas.version}</version> </dependency> <dependency> <groupId>org.apereo.cas</groupId> 
+			<artifactId>cas-server-support-saml-googleapps-core</artifactId> <version>${cas.version}</version> 
+			</dependency> -->
 		<dependency>
 			<groupId>org.apereo.cas</groupId>
 			<artifactId>cas-server-support-saml-idp</artifactId>
@@ -201,6 +193,39 @@
 			<artifactId>cas-server-support-jdbc-drivers</artifactId>
 			<version>${cas.version}</version>
 		</dependency>
+
+		<!-- Custom Authentication -->
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-core-authentication-api</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+
+		<!-- Custom Configuration -->
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-core-configuration-api</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- service manager -->
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-json-service-registry</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+    <groupId>org.apereo.cas</groupId>
+    <artifactId>cas-server-support-jpa-service-registry</artifactId>
+    <version>${cas.version}</version>
+</dependency>
 	</dependencies>
 
 	<properties>
@@ -213,6 +238,7 @@
 		<mainClassName>org.springframework.boot.loader.WarLauncher</mainClassName>
 		<isExecutable>false</isExecutable>
 		<manifestFileToUse>${project.build.directory}/war/work/org.apereo.cas/cas-server-webapp${app.server}/META-INF/MANIFEST.MF</manifestFileToUse>
+		<lombok.version>1.18.10</lombok.version>
 	</properties>
 
 	<repositories>

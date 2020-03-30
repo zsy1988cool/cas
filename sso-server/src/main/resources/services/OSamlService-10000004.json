@@ -1,7 +1,13 @@
 {
 	"@class": "org.apereo.cas.support.saml.services.SamlRegisteredService",
-	"serviceId": "sso.lucky.client1.net",
+	"serviceId": "client1",
 	"name": "OSamlService",
 	"id": 10000004,
-	"evaluationOrder" : 10
+	"evaluationOrder" : 11,
+	"metadataLocation" : "classpath:metadata/sp-oa-metadata.xml",
+	"accessStrategy": {
+    "@class" : "org.apereo.cas.services.DefaultRegisteredServiceAccessStrategy",
+    "enabled" : false,
+    "ssoEnabled" : false
+    }
 }

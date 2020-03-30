@@ -1,8 +1,13 @@
 {
   "@class" : "org.apereo.cas.services.RegexRegisteredService",
-  "serviceId" : "^(http|https|imaps)://.*",
+  "serviceId" : "^(http|https|imaps)://sso.lucky.client1.net.*",
   "name" : "HTTPS and IMAPS",
   "id" : 10000001,
   "description" : "This service definition authorizes all application urls that support HTTPS and IMAPS protocols.",
-  "evaluationOrder" : 10000
+  "evaluationOrder" : 1,
+  "accessStrategy": {
+    "@class" : "org.apereo.cas.services.DefaultRegisteredServiceAccessStrategy",
+    "enabled" : true,
+    "ssoEnabled" : true
+    }
 }
