@@ -20,6 +20,13 @@ public class CountAuthenticationConfiguration implements AuthenticationEventExec
 	@Autowired
 	private CasConfigurationProperties casProperties;
 
+	@Override
+	public void configureAuthenticationExecutionPlan(AuthenticationEventExecutionPlan plan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/*
 	@Autowired
 	@Qualifier("servicesManager")
 	private ServicesManager servicesManager;
@@ -35,4 +42,5 @@ public class CountAuthenticationConfiguration implements AuthenticationEventExec
 	public void configureAuthenticationExecutionPlan(final AuthenticationEventExecutionPlan plan) {
 		plan.registerAuthenticationHandler(myAuthenticationHandler());
 	}
+	*/
 }
