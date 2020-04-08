@@ -65,6 +65,13 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<dependency>
+
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+		</dependency>
+
 		<!-- 票据和会话放在redis缓存 -->
 		<dependency>
 			<groupId>org.apereo.cas</groupId>
@@ -74,19 +81,6 @@
 		<dependency>
 			<groupId>org.apereo.cas</groupId>
 			<artifactId>cas-server-webapp-session-redis</artifactId>
-			<version>${cas.version}</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.apereo.cas</groupId>
-			<artifactId>cas-server-support-ldap</artifactId>
-			<version>${cas.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apereo.cas</groupId>
-			<artifactId>cas-server-support-pm-ldap</artifactId>
 			<version>${cas.version}</version>
 		</dependency>
 
@@ -194,6 +188,12 @@
 			<version>${cas.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-jdbc</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+
 		<!-- Custom Authentication -->
 		<dependency>
 			<groupId>org.apereo.cas</groupId>
@@ -218,14 +218,19 @@
 		<!-- service manager -->
 		<dependency>
 			<groupId>org.apereo.cas</groupId>
-			<artifactId>cas-server-support-json-service-registry</artifactId>
+			<artifactId>cas-server-support-jpa-service-registry</artifactId>
 			<version>${cas.version}</version>
 		</dependency>
 		<dependency>
-    <groupId>org.apereo.cas</groupId>
-    <artifactId>cas-server-support-jpa-service-registry</artifactId>
-    <version>${cas.version}</version>
-</dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-core-validation</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-jdbc-authentication</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
 	</dependencies>
 
 	<properties>
