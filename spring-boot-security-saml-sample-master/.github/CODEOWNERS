@@ -1,0 +1,5 @@
+# Overall project owner
+* @vdenotaris
+
+# Automate updating IDP certificate in keystore
+/src/main/resources/saml/update-certifcate.sh @tomwscott
