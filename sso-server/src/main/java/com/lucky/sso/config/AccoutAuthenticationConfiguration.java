@@ -28,7 +28,7 @@ import com.lucky.sso.authentication.AccoutAuthentication;
 
 @Configuration("CountAuthenticationConfiguration")
 @EnableConfigurationProperties(CasConfigurationProperties.class)
-public class CountAuthenticationConfiguration implements AuthenticationEventExecutionPlanConfigurer  {
+public class AccoutAuthenticationConfiguration implements AuthenticationEventExecutionPlanConfigurer  {
 	@Autowired
 	private CasConfigurationProperties casProperties;
 	

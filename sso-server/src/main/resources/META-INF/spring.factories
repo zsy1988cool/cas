@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.lucky.sso.config.CountAuthenticationConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.lucky.sso.config.AccoutAuthenticationConfiguration
