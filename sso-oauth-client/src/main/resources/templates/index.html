@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th=“http://www.thymeleaf.org”>
+
+<head>
+    <title>OA系统</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+        	background-color: #333;
+        	background-image: -webkit-linear-gradient(top, #001f7d, #070026);
+        	background-image: -moz-linear-gradient(top, #001f7d, #070026);
+        	background-image: -ms-linear-gradient(top, #001f7d, #070026);
+        	background-image: -o-linear-gradient(top, #001f7d, #070026);
+        	background-image: linear-gradient(to bottom, #001f7d, #070026);
+        	margin: 0px;
+        	padding: 0;
+        	overflow: hidden;
+        }
+        
+        .m{width: 100%;text-align: center;font-size: 120px;font-weight: 900;color: aliceblue;margin-top: 15%;
+        	position: fixed;z-index: 999;color: transparent;
+  background: linear-gradient(180deg, #fefefe, #bbb);
+  -webkit-background-clip: text;
+  -webkit-filter: drop-shadow(-1px -1px white) drop-shadow(1px 1px gray) drop-shadow(1px 1px #7a7a7a) drop-shadow(1px 1px #757575) drop-shadow(1px 1px #707070) drop-shadow(1px 1px #6b6b6b) drop-shadow(1px 1px #666666) drop-shadow(1px 1px #616161) drop-shadow(1px 1px #5c5c5c) drop-shadow(1px 1px #575757) drop-shadow(1px 1px #525252) drop-shadow(1px 1px #4d4d4d) drop-shadow(12px 12px 30px rgba(0, 0, 0, 0.2)) drop-shadow(12px 12px 10px rgba(0, 0, 0, 0.2));
+        }
+    </style>
+</head>
+
+<body>
+    <script src="/js/three.js"></script>
+    <div><a href="https://sso.lucky.client2.net:8002/cas/welcome" target="_blank" text="瑞幸EHR系统">瑞幸EHR系统</a></div>
+    <div th:text="'当前用户:' + ${username}" >
+    </div>
+    <div th:text="${appname}" class="m">
+    
+    </div>
+    <script>
+        var SEPARATION = 100,
+            AMOUNTX = 50,
+            AMOUNTY = 50;
+        var container;
+        var camera, scene, renderer;
+        var particles, particle, count = 0;
+        var mouseX = 0,
+            mouseY = 0;
+        var windowHalfX = window.innerWidth / 2;
+        var windowHalfY = window.innerHeight / 2;
+        init();
+        animate();
+
+        function init() {
+            container = document.createElement('div');
+            document.body.appendChild(container);
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+            camera.position.z = 1000;
+            scene = new THREE.Scene();
+            particles = new Array();
+            var PI2 = Math.PI * 2;
+            var material = new THREE.ParticleCanvasMaterial({
+                color: 0xffffffff,
+                program: function(context) {
+                    context.beginPath();
+                    context.arc(0, 0, 1, 0, PI2, true);
+                    context.fill();
+                }
+            });
+            var i = 0;
+            for (var ix = 0; ix < AMOUNTX; ix++) {
+                for (var iy = 0; iy < AMOUNTY; iy++) {
+                    particle = particles[i++] = new THREE.Particle(material);
+                    particle.position.x = ix * SEPARATION - ((AMOUNTX * SEPARATION) / 2);
+                    particle.position.z = iy * SEPARATION - ((AMOUNTY * SEPARATION) / 2);
+                    scene.add(particle);
+                }
+            }
+            renderer = new THREE.CanvasRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+            document.addEventListener('mousemove', onDocumentMouseMove, false);
+            document.addEventListener('touchstart', onDocumentTouchStart, false);
+            document.addEventListener('touchmove', onDocumentTouchMove, false);
+
+            window.addEventListener('resize', onWindowResize, false);
+        }
+
+        function onWindowResize() {
+            windowHalfX = window.innerWidth / 2;
+            windowHalfY = window.innerHeight / 2;
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function onDocumentMouseMove(event) {
+            mouseX = event.clientX - windowHalfX;
+            mouseY = event.clientY - windowHalfY;
+        }
+
+        function onDocumentTouchStart(event) {
+            if (event.touches.length === 1) {
+                event.preventDefault();
+                mouseX = event.touches[0].pageX - windowHalfX;
+                mouseY = event.touches[0].pageY - windowHalfY;
+            }
+        }
+
+        function onDocumentTouchMove(event) {
+            if (event.touches.length === 1) {
+                event.preventDefault();
+                mouseX = event.touches[0].pageX - windowHalfX;
+                mouseY = event.touches[0].pageY - windowHalfY;
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            render();
+        }
+
+        function render() {
+            camera.position.x += (mouseX - camera.position.x) * .05;
+            camera.position.y += (-mouseY - camera.position.y) * .05;
+            camera.lookAt(scene.position);
+            var i = 0;
+            for (var ix = 0; ix < AMOUNTX; ix++) {
+                for (var iy = 0; iy < AMOUNTY; iy++) {
+                    particle = particles[i++];
+                    particle.position.y = (Math.sin((ix + count) * 0.3) * 50) + (Math.sin((iy + count) * 0.5) * 50);
+                    particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.3) + 1) * 2 + (Math.sin((iy + count) * 0.5) + 1) * 2;
+                }
+            }
+
+            renderer.render(scene, camera);
+            count += 0.1;
+        }
+    </script>
+</body>
+
+</html>
