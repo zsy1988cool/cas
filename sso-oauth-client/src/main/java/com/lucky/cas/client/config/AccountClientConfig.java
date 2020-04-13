@@ -1,6 +1,9 @@
 package com.lucky.cas.client.config;
 
+//import org.jasig.cas.client.configuration.ConfigurationKeys;
+//import org.jasig.cas.client.session.SingleSignOutFilter;
 import org.jasig.cas.client.util.AssertionThreadLocalFilter;
+
 import org.pac4j.oauth.client.CasOAuthWrapperClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -30,6 +33,26 @@ public class AccountClientConfig {
 		client.setCallbackUrl(callbackUrl);
 		return client;
 	}
+
+//	@SuppressWarnings("rawtypes")
+//	@Bean
+//	public FilterRegistrationBean singleSignOutFilter() {
+//		FilterRegistrationBean filterRegistration = new FilterRegistrationBean();
+//
+//		filterRegistration.setFilter(new SingleSignOutFilter());
+//		filterRegistration.setEnabled(true);
+//		filterRegistration.addUrlPatterns("/*");
+//
+//		filterRegistration.addInitParameter(ConfigurationKeys.CAS_SERVER_URL_PREFIX.getName(),
+//		 "http://sso.lucky.net:8080/sso-server");
+//		filterRegistration.addInitParameter(ConfigurationKeys.ARTIFACT_PARAMETER_NAME.getName(),
+//				 "access_token");
+//		filterRegistration.addInitParameter(ConfigurationKeys.CAS_SERVER_LOGIN_URL.getName(),
+//				 "http://sso.lucky.net:8080/sso-server/logout?service=?");
+//		filterRegistration.addInitParameter(ConfigurationKeys.ARTIFACT_PARAMETER_OVER_POST.getName(),  "1");
+//		filterRegistration.setOrder(3);
+//		return filterRegistration;
+//	}
 
 	@SuppressWarnings("rawtypes")
 	@Bean

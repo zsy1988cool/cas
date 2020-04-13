@@ -12,4 +12,11 @@ public class AccountPrincipal extends AttributePrincipalImpl {
     public AccountPrincipal(final String accountId) {
         super(accountId);
     }
+    
+    /**
+     * Get account Id
+     */
+    public String getAccountId() {
+    	return getName();
+    }
 }

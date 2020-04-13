@@ -5,12 +5,17 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.jasig.cas.client.authentication.AttributePrincipal;
+import org.jasig.cas.client.util.AssertionHolder;
+import org.jasig.cas.client.validation.Assertion;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.lucky.accounts.client.validation.AccountPrincipal;
 
 @Controller
 @RequestMapping(value="order")
@@ -25,19 +30,16 @@ public class OAuth2OrderController {
     }
 	
 	@RequestMapping(value="welcome")
-	public String welcome(Model model) {
-//		Assertion assertion = (Assertion) request.getSession().getAttribute(AbstractCasFilter.CONST_CAS_ASSERTION);
-//		//获取登录用户名
-//		String loginName = assertion.getPrincipal().getName();
-//		System.out.printf("登录用户名:%s\r\n", loginName);
-//
-//		String profile = getProfile();
-//		String serviceUrl = getServiceUrl();
-	
-		model.addAttribute("username", "");
-		model.addAttribute("appname", "");
-		model.addAttribute("profile", "");
-		model.addAttribute("serviceUrl", "");
+	public String welcome(Model model) throws Exception {
+		Assertion assertion = AssertionHolder.getAssertion();
+		if(assertion != null) {
+			AccountPrincipal principal = (AccountPrincipal)assertion.getPrincipal();
+			String accountId = principal.getAccountId();
+			System.out.printf("登录员工号:%s\r\n", accountId);
+			
+			model.addAttribute("username", accountId);
+			model.addAttribute("appname", "");
+		}
 		//return "welcome";
 		return "index";
 	}
