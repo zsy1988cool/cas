@@ -1,7 +1,7 @@
 package com.lucky.cas.client.config;
 
-//import org.jasig.cas.client.configuration.ConfigurationKeys;
-//import org.jasig.cas.client.session.SingleSignOutFilter;
+import org.jasig.cas.client.configuration.ConfigurationKeys;
+import org.jasig.cas.client.session.SingleSignOutFilter;
 import org.jasig.cas.client.util.AssertionThreadLocalFilter;
 
 import org.pac4j.oauth.client.CasOAuthWrapperClient;
@@ -34,33 +34,21 @@ public class AccountClientConfig {
 		return client;
 	}
 
-//	@SuppressWarnings("rawtypes")
-//	@Bean
-//	public FilterRegistrationBean singleSignOutFilter() {
-//		FilterRegistrationBean filterRegistration = new FilterRegistrationBean();
-//
-//		filterRegistration.setFilter(new SingleSignOutFilter());
-//		filterRegistration.setEnabled(true);
-//		filterRegistration.addUrlPatterns("/*");
-//
-//		filterRegistration.addInitParameter(ConfigurationKeys.CAS_SERVER_URL_PREFIX.getName(),
-//		 "http://sso.lucky.net:8080/sso-server");
-//		filterRegistration.addInitParameter(ConfigurationKeys.ARTIFACT_PARAMETER_NAME.getName(),
-//				 "access_token");
-//		filterRegistration.addInitParameter(ConfigurationKeys.CAS_SERVER_LOGIN_URL.getName(),
-//				 "http://sso.lucky.net:8080/sso-server/logout?service=?");
-//		filterRegistration.addInitParameter(ConfigurationKeys.ARTIFACT_PARAMETER_OVER_POST.getName(),  "1");
-//		filterRegistration.setOrder(3);
-//		return filterRegistration;
-//	}
-
 	@SuppressWarnings("rawtypes")
 	@Bean
-	public FilterRegistrationBean authorizationOAuthFilter() {
-		FilterRegistrationBean<AuthorizationOAuthFilter> filterRegistration = new FilterRegistrationBean<AuthorizationOAuthFilter>();
-		filterRegistration.setFilter(new AuthorizationOAuthFilter(oauthClient()));
+	public FilterRegistrationBean singleSignOutFilter() {
+		FilterRegistrationBean filterRegistration = new FilterRegistrationBean();
+
+		filterRegistration.setFilter(new SingleSignOutFilter());
+		filterRegistration.setEnabled(true);
 		filterRegistration.addUrlPatterns("/*");
-		filterRegistration.setOrder(2);
+
+		filterRegistration.addInitParameter(ConfigurationKeys.CAS_SERVER_URL_PREFIX.getName(),
+		 "http://sso.lucky.net:8080/sso-server");
+		filterRegistration.addInitParameter(ConfigurationKeys.ARTIFACT_PARAMETER_NAME.getName(),
+				 "code");
+		filterRegistration.addInitParameter(ConfigurationKeys.ARTIFACT_PARAMETER_OVER_POST.getName(),  "1");
+		filterRegistration.setOrder(1);
 		return filterRegistration;
 	}
 
@@ -70,7 +58,17 @@ public class AccountClientConfig {
 		FilterRegistrationBean<AuthorizationCallbackFilter> filterRegistration = new FilterRegistrationBean<AuthorizationCallbackFilter>();
 		filterRegistration.setFilter(new AuthorizationCallbackFilter(oauthClient()));
 		filterRegistration.addUrlPatterns("/oauth2callback");
-		filterRegistration.setOrder(1);
+		filterRegistration.setOrder(2);
+		return filterRegistration;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	@Bean
+	public FilterRegistrationBean authorizationOAuthFilter() {
+		FilterRegistrationBean<AuthorizationOAuthFilter> filterRegistration = new FilterRegistrationBean<AuthorizationOAuthFilter>();
+		filterRegistration.setFilter(new AuthorizationOAuthFilter(oauthClient()));
+		filterRegistration.addUrlPatterns("/*");
+		filterRegistration.setOrder(3);
 		return filterRegistration;
 	}
 

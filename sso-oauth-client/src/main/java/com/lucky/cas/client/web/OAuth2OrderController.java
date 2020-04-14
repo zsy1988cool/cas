@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.lucky.accounts.client.validation.AccountPrincipal;
@@ -44,7 +45,7 @@ public class OAuth2OrderController {
 		return "index";
 	}
 	
-	@GetMapping("/logout")
+	@PostMapping("/logout")
     public void logout(HttpSession session, HttpServletResponse response) throws IOException{
         // session.removeAttribute(WebSecurityConfig.SESSION_KEY);
 		System.out.println("准备登出");
