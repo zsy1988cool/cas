@@ -1,4 +1,4 @@
-package com.lucky.accounts.client.oauth2;
+package com.lucky.accounts.client.oauth2.filter;
 
 import javax.servlet.Filter;
 
@@ -7,7 +7,7 @@ import javax.servlet.ServletException;
 import org.apache.log4j.Logger;
 import org.pac4j.oauth.client.CasOAuthWrapperClient;
 
-import com.lucky.accounts.client.bind.OAuth2TokenHandler;
+import com.lucky.accounts.client.oauth2.handle.OAuth2TokenHandler;
 
 /**
  * @Description OAuth2过滤器基类
@@ -21,13 +21,5 @@ public abstract class AbstractOAuthFilter implements Filter {
 
 	public AbstractOAuthFilter(CasOAuthWrapperClient client) {
 		tokenHandler = new OAuth2TokenHandler(client);
-	}
-	
-	@Override
-	public void init(FilterConfig filterConfig) throws ServletException {
-	}
-
-	@Override
-	public void destroy() {
 	}
 }

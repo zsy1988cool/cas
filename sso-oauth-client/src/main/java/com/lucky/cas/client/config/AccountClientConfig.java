@@ -11,9 +11,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-import com.lucky.accounts.client.oauth2.AuthorizationCallbackFilter;
 import com.lucky.accounts.client.oauth2.AuthorizationOAuthFilter;
 import com.lucky.accounts.client.oauth2.MyOAuthWrapperClient;
+import com.lucky.accounts.client.oauth2.filter.AuthorizationCallbackFilter;
 
 @Configuration
 @Component

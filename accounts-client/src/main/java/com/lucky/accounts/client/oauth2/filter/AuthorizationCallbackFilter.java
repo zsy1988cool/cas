@@ -1,7 +1,6 @@
-package com.lucky.accounts.client.oauth2;
+package com.lucky.accounts.client.oauth2.filter;
 
 import java.io.IOException;
-
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
@@ -12,29 +11,29 @@ import javax.servlet.http.HttpServletResponse;
 import org.pac4j.oauth.client.CasOAuthWrapperClient;
 
 /**
- * @Description OAuth2过滤器，判断是否已经获得授权
+ * @Description ＯＡｕｔｈ２端口回调过滤器
  * @Author seyi.zhou@luckincoffee.com
- * @Date 2020年4月10日 上午9:44:08
+ * @Date 2020年4月11日 下午4:58:06
  */
-public class AuthorizationOAuthFilter extends AbstractOAuthFilter {
+public class AuthorizationCallbackFilter extends AbstractOAuthFilter {
 
-	public AuthorizationOAuthFilter(CasOAuthWrapperClient client) {
+	public AuthorizationCallbackFilter(CasOAuthWrapperClient client) {
 		super(client);
 	}
 
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain filterChain)
 			throws IOException, ServletException {
-		final HttpServletRequest request = (HttpServletRequest) req;
-		final HttpServletResponse response = (HttpServletResponse) resp;
-
+		final HttpServletRequest request = (HttpServletRequest)req;
+		final HttpServletResponse response = (HttpServletResponse)resp;
+		
 		try {
-			if(tokenHandler.doAuthorization(request, response))
+			if(tokenHandler.doAuthorizationCallback(request, response))
 				filterChain.doFilter(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
-			response.sendError(HttpServletResponse.SC_FORBIDDEN, e.getMessage());
-			// throw new RuntimeException(e);
+        	response.sendError(HttpServletResponse.SC_FORBIDDEN, e.getMessage());
 		}
 	}
+
 }

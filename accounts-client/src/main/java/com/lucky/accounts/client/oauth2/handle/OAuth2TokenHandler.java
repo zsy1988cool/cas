@@ -1,4 +1,4 @@
-package com.lucky.accounts.client.handle;
+package com.lucky.accounts.client.oauth2.handle;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

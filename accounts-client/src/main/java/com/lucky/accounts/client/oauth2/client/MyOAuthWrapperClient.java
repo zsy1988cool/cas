@@ -1,4 +1,4 @@
-package com.lucky.accounts.client.oauth2;
+package com.lucky.accounts.client.oauth2.client;
 
 import org.pac4j.oauth.client.CasOAuthWrapperClient;
 import org.pac4j.oauth.profile.JsonHelper;
