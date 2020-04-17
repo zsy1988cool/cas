@@ -1,4 +1,5 @@
 <factorypath>
+    <factorypathentry kind="VARJAR" id="M2_REPO/junit/junit/4.7/junit-4.7.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-redis-ticket-registry/5.3.15/cas-server-support-redis-ticket-registry-5.3.15.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/logging/log4j/log4j-api/2.12.1/log4j-api-2.12.1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/logging/log4j/log4j-core/2.12.1/log4j-core-2.12.1.jar" enabled="true" runInBatchMode="false"/>
@@ -118,7 +119,6 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/boot/spring-boot-starter-actuator/1.5.18.RELEASE/spring-boot-starter-actuator-1.5.18.RELEASE.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/boot/spring-boot-actuator/1.5.18.RELEASE/spring-boot-actuator-1.5.18.RELEASE.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-util/5.3.15/cas-server-core-api-util-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/bitbucket/b_c/jose4j/0.6.3/jose4j-0.6.3.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/aspectj/aspectjrt/1.9.1/aspectjrt-1.9.1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/aspectj/aspectjweaver/1.9.1/aspectjweaver-1.9.1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar" enabled="true" runInBatchMode="false"/>
@@ -129,14 +129,14 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/redis/clients/jedis/2.9.0/jedis-2.9.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-logging/5.3.15/cas-server-core-logging-5.3.15.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-logging-config/5.3.15/cas-server-core-logging-config-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-cookie-api/5.3.15/cas-server-core-cookie-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/thymeleaf/thymeleaf-spring4/3.0.11.RELEASE/thymeleaf-spring4-3.0.11.RELEASE.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/thymeleaf/thymeleaf/3.0.11.RELEASE/thymeleaf-3.0.11.RELEASE.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/attoparser/attoparser/2.0.5.RELEASE/attoparser-2.0.5.RELEASE.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/boot/spring-boot-starter-thymeleaf/1.5.18.RELEASE/spring-boot-starter-thymeleaf-1.5.18.RELEASE.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-util-api/5.3.15/cas-server-core-util-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-web/5.3.15/cas-server-core-api-web-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-tickets-api/5.3.15/cas-server-core-tickets-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-services/5.3.15/cas-server-core-services-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-redis-core/5.3.15/cas-server-support-redis-core-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-webapp-session-redis/5.3.15/cas-server-webapp-session-redis-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/session/spring-session/1.3.1.RELEASE/spring-session-1.3.1.RELEASE.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-pm-webflow/5.3.15/cas-server-support-pm-webflow-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-webflow/5.3.15/cas-server-core-api-webflow-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-pm/5.3.15/cas-server-support-pm-5.3.15.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/pac4j/pac4j-cas/3.6.1/pac4j-cas-3.6.1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/jasig/cas/client/cas-client-support-saml/3.5.0/cas-client-support-saml-3.5.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/pac4j/pac4j-config/3.6.1/pac4j-config-3.6.1.jar" enabled="true" runInBatchMode="false"/>
@@ -164,39 +164,15 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/net/minidev/json-smart/2.3/json-smart-2.3.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/net/minidev/accessors-smart/1.2/accessors-smart-1.2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/com/google/zxing/core/3.3.2/core-3.3.2.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/com/vdurmont/semver4j/2.2.0/semver4j-2.2.0.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/com/github/oshi/oshi-core/3.5.0/oshi-core-3.5.0.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/threeten/threetenbp/1.3.6/threetenbp-1.3.6.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-tickets-api/5.3.15/cas-server-core-tickets-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-ticket/5.3.15/cas-server-core-api-ticket-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-logout/5.3.15/cas-server-core-api-logout-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/jasig/cas/client/cas-client-core/3.5.1/cas-client-core-3.5.1.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/com/github/ben-manes/caffeine/caffeine/2.6.2/caffeine-2.6.2.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/com/github/ben-manes/caffeine/guava/2.6.2/guava-2.6.2.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-authentication-api/5.3.15/cas-server-core-authentication-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-events/5.3.15/cas-server-core-api-events-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-validation/5.3.15/cas-server-core-api-validation-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-authentication-mfa/5.3.15/cas-server-core-authentication-mfa-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/com/timgroup/java-statsd-client/3.1.0/java-statsd-client-3.1.0.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/io/dropwizard/metrics/metrics-annotation/3.2.5/metrics-annotation-3.2.5.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/io/dropwizard/metrics/metrics-core/3.2.5/metrics-core-3.2.5.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/io/dropwizard/metrics/metrics-jvm/3.2.5/metrics-jvm-3.2.5.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/io/dropwizard/metrics/metrics-healthchecks/3.2.5/metrics-healthchecks-3.2.5.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/io/dropwizard/metrics/metrics-servlets/3.2.5/metrics-servlets-3.2.5.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/io/dropwizard/metrics/metrics-json/3.2.5/metrics-json-3.2.5.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/com/papertrail/profiler/1.0.2/profiler-1.0.2.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/com/ryantenney/metrics/metrics-spring/3.1.3/metrics-spring-3.1.3.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-services-authentication/5.3.15/cas-server-core-services-authentication-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-web-api/5.3.15/cas-server-core-web-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-security-filter/2.0.10.4/cas-server-security-filter-2.0.10.4.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-services/5.3.15/cas-server-core-services-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-services/5.3.15/cas-server-core-api-services-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-audit/5.3.15/cas-server-core-api-audit-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api/5.3.15/cas-server-core-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-services-api/5.3.15/cas-server-core-services-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-services-registry/5.3.15/cas-server-core-services-registry-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-authentication-attributes/5.3.15/cas-server-core-authentication-attributes-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-configuration-model/5.3.15/cas-server-core-api-configuration-model-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/boot/spring-boot-configuration-processor/1.5.18.RELEASE/spring-boot-configuration-processor-1.5.18.RELEASE.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/json/json/20160810/json-20160810.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/boot/spring-boot-configuration-metadata/1.5.18.RELEASE/spring-boot-configuration-metadata-1.5.18.RELEASE.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/github/javaparser/javaparser-core/3.6.5/javaparser-core-3.6.5.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-authentication/5.3.15/cas-server-core-api-authentication-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/security/spring-security-core/4.2.8.RELEASE/spring-security-core-4.2.8.RELEASE.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/mongodb/mongo-java-driver/3.11.0/mongo-java-driver-3.11.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jasypt/jasypt/1.9.2/jasypt-1.9.2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/codehaus/groovy/groovy-jsr223/2.4.15/groovy-jsr223-2.4.15.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/codehaus/groovy/groovy/2.4.15/groovy-2.4.15.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/codehaus/groovy/groovy-console/2.4.15/groovy-console-2.4.15.jar" enabled="true" runInBatchMode="false"/>
@@ -207,49 +183,175 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/codehaus/groovy/groovy-json/2.4.15/groovy-json-2.4.15.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/codehaus/groovy/groovy-xml/2.4.15/groovy-xml-2.4.15.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/codehaus/groovy/groovy-sql/2.4.15/groovy-sql-2.4.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-configuration-api/5.3.15/cas-server-core-configuration-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-configuration/5.3.15/cas-server-core-api-configuration-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-configuration-model/5.3.15/cas-server-core-api-configuration-model-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/boot/spring-boot-configuration-processor/1.5.18.RELEASE/spring-boot-configuration-processor-1.5.18.RELEASE.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/json/json/20160810/json-20160810.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/boot/spring-boot-configuration-metadata/1.5.18.RELEASE/spring-boot-configuration-metadata-1.5.18.RELEASE.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/com/github/javaparser/javaparser-core/3.6.5/javaparser-core-3.6.5.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-authentication/5.3.15/cas-server-core-api-authentication-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-protocol/5.3.15/cas-server-core-api-protocol-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-webflow/5.3.15/cas-server-core-api-webflow-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/security/spring-security-core/4.2.8.RELEASE/spring-security-core-4.2.8.RELEASE.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/mongodb/mongo-java-driver/3.11.0/mongo-java-driver-3.11.0.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/jasypt/jasypt/1.9.2/jasypt-1.9.2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/bouncycastle/bcpkix-jdk15on/1.60/bcpkix-jdk15on-1.60.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/cryptacular/cryptacular/1.2.2/cryptacular-1.2.2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/bouncycastle/bcprov-jdk15on/1.60/bcprov-jdk15on-1.60.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-redis-core/5.3.15/cas-server-support-redis-core-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-webapp-session-redis/5.3.15/cas-server-webapp-session-redis-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/session/spring-session/1.3.1.RELEASE/spring-session-1.3.1.RELEASE.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-ldap/5.3.15/cas-server-support-ldap-5.3.15.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\annotations-api.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\catalina-ant.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\catalina-ha.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\catalina-storeconfig.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\catalina-tribes.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\catalina.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\ecj-4.5.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\el-api.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\jasper-el.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\jasper.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\jsp-api.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\servlet-api.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\tomcat-api.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\tomcat-coyote.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\tomcat-dbcp.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\tomcat-i18n-es.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\tomcat-i18n-fr.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\tomcat-i18n-ja.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\tomcat-jdbc.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\tomcat-jni.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\tomcat-util-scan.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\tomcat-util.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\tomcat-websocket.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="D:\software\apache-tomcat-8.0.35\lib\websocket-api.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core/5.3.15/cas-server-core-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-logout/5.3.15/cas-server-core-api-logout-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api/5.3.15/cas-server-core-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-validation-api/5.3.15/cas-server-core-validation-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-authentication-mfa/5.3.15/cas-server-core-authentication-mfa-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/timgroup/java-statsd-client/3.1.0/java-statsd-client-3.1.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/io/dropwizard/metrics/metrics-annotation/3.2.5/metrics-annotation-3.2.5.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/io/dropwizard/metrics/metrics-core/3.2.5/metrics-core-3.2.5.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/io/dropwizard/metrics/metrics-jvm/3.2.5/metrics-jvm-3.2.5.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/io/dropwizard/metrics/metrics-healthchecks/3.2.5/metrics-healthchecks-3.2.5.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/io/dropwizard/metrics/metrics-servlets/3.2.5/metrics-servlets-3.2.5.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/io/dropwizard/metrics/metrics-json/3.2.5/metrics-json-3.2.5.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/papertrail/profiler/1.0.2/profiler-1.0.2.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/ryantenney/metrics/metrics-spring/3.1.3/metrics-spring-3.1.3.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-logout-api/5.3.15/cas-server-core-logout-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-oauth-webflow/5.3.15/cas-server-support-oauth-webflow-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-throttle/5.3.15/cas-server-core-api-throttle-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-oauth/5.3.15/cas-server-support-oauth-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-oauth-core/5.3.15/cas-server-support-oauth-core-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-oauth-api/5.3.15/cas-server-support-oauth-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-throttle/5.3.15/cas-server-support-throttle-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-util/5.3.15/cas-server-core-util-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-services-registry/5.3.15/cas-server-core-services-registry-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-oauth-services/5.3.15/cas-server-support-oauth-services-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-saml/5.3.15/cas-server-support-saml-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-authentication-attributes/5.3.15/cas-server-core-authentication-attributes-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-services-authentication/5.3.15/cas-server-core-services-authentication-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-validation/5.3.15/cas-server-support-validation-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-saml-core/5.3.15/cas-server-support-saml-core-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-core/3.4.0/opensaml-core-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-xmlsec-impl/3.4.0/opensaml-xmlsec-impl-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-messaging-api/3.4.0/opensaml-messaging-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-xmlsec-api/3.4.0/opensaml-xmlsec-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-saml-api/3.4.0/opensaml-saml-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-profile-api/3.4.0/opensaml-profile-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-storage-api/3.4.0/opensaml-storage-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-saml-impl/3.4.0/opensaml-saml-impl-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-soap-impl/3.4.0/opensaml-soap-impl-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/velocity/velocity/1.7/velocity-1.7.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-security-api/3.4.0/opensaml-security-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/santuario/xmlsec/2.0.10/xmlsec-2.0.10.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/woodstox/woodstox-core/5.0.3/woodstox-core-5.0.3.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-xacml-saml-impl/3.4.0/opensaml-xacml-saml-impl-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-xacml-saml-api/3.4.0/opensaml-xacml-saml-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-xacml-api/3.4.0/opensaml-xacml-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-security-impl/3.4.0/opensaml-security-impl-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-soap-api/3.4.0/opensaml-soap-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-messaging-impl/3.4.0/opensaml-messaging-impl-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-profile-impl/3.4.0/opensaml-profile-impl-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/opensaml/opensaml-storage-impl/3.4.0/opensaml-storage-impl-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/javax/json/javax.json-api/1.0/javax.json-api-1.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/spy/spymemcached/2.12.3/spymemcached-2.12.3.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/jdom/jdom/1.0/jdom-1.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/velocity/velocity-engine-core/2.0/velocity-engine-core-2.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/shibboleth/idp/idp-attribute-filter-api/3.4.0/idp-attribute-filter-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/codehaus/janino/janino/2.7.8/janino-2.7.8.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/codehaus/janino/commons-compiler/2.7.8/commons-compiler-2.7.8.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/javax/mail/mail/1.4.7/mail-1.4.7.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/shibboleth/liberty/idwsfconsumer/1.0.0/idwsfconsumer-1.0.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/shibboleth/idp/idp-attribute-api/3.4.0/idp-attribute-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/shibboleth/idp/idp-attribute-resolver-api/3.4.0/idp-attribute-resolver-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/shibboleth/idp/idp-authn-api/3.4.0/idp-authn-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/eu/bitwalker/UserAgentUtils/1.18/UserAgentUtils-1.18.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/shibboleth/idp/idp-core/3.4.0/idp-core-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/beust/jcommander/1.48/jcommander-1.48.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/shibboleth/ext/spring-extensions/5.4.0/spring-extensions-5.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/shibboleth/idp/idp-profile-impl/3.4.0/idp-profile-impl-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/shibboleth/idp/idp-profile-api/3.4.0/idp-profile-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/shibboleth/idp/idp-session-api/3.4.0/idp-session-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/shibboleth/idp/idp-profile-spring/3.4.0/idp-profile-spring-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/shibboleth/idp/idp-schema/3.4.0/idp-schema-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/shibboleth/idp/idp-saml-api/3.4.0/idp-saml-api-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/shibboleth/idp/idp-saml-impl/3.4.0/idp-saml-impl-3.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/shibboleth/utilities/java-support/7.4.0/java-support-7.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-saml-idp/5.3.15/cas-server-support-saml-idp-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-audit/5.3.15/cas-server-core-api-audit-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-audit/5.3.15/cas-server-core-audit-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-audit-api/5.3.15/cas-server-core-audit-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-cookie-api/5.3.15/cas-server-core-cookie-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jasig/cas/client/cas-client-core/3.5.1/cas-client-core-3.5.1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/github/ben-manes/caffeine/caffeine/2.6.2/caffeine-2.6.2.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/github/ben-manes/caffeine/guava/2.6.2/guava-2.6.2.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-saml-idp-core/5.3.15/cas-server-support-saml-idp-core-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-services-api/5.3.15/cas-server-core-services-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-saml-idp-metadata/5.3.15/cas-server-support-saml-idp-metadata-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-saml-idp-metadata-jpa/5.3.15/cas-server-support-saml-idp-metadata-jpa-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-jpa-util/5.3.15/cas-server-support-jpa-util-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-saml-idp-metadata-rest/5.3.15/cas-server-support-saml-idp-metadata-rest-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-saml-idp-ticket/5.3.15/cas-server-support-saml-idp-ticket-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-saml-idp-web/5.3.15/cas-server-support-saml-idp-web-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-saml-mdui/5.3.15/cas-server-support-saml-mdui-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-web/5.3.15/cas-server-core-web-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/integration/spring-integration-core/4.3.16.RELEASE/spring-integration-core-4.3.16.RELEASE.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/retry/spring-retry/1.1.3.RELEASE/spring-retry-1.1.3.RELEASE.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/integration/spring-integration-jmx/4.3.16.RELEASE/spring-integration-jmx-4.3.16.RELEASE.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-saml-mdui-core/5.3.15/cas-server-support-saml-mdui-core-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-saml-sp-integrations/5.3.15/cas-server-support-saml-sp-integrations-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/xerces/2.9.0/xerces-2.9.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-jdbc-drivers/5.3.15/cas-server-support-jdbc-drivers-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/hsqldb/hsqldb/2.4.0/hsqldb-2.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/postgresql/postgresql/42.2.5/postgresql-42.2.5.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/mysql/mysql-connector-java/8.0.11/mysql-connector-java-8.0.11.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/google/protobuf/protobuf-java/2.6.0/protobuf-java-2.6.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/mariadb/jdbc/mariadb-java-client/2.2.4/mariadb-java-client-2.2.4.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/sourceforge/jtds/jtds/1.3.1/jtds-1.3.1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/microsoft/sqlserver/mssql-jdbc/6.4.0.jre8/mssql-jdbc-6.4.0.jre8.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-jdbc/5.3.15/cas-server-support-jdbc-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-authentication-api/5.3.15/cas-server-core-authentication-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-services/5.3.15/cas-server-core-api-services-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-ticket/5.3.15/cas-server-core-api-ticket-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-events/5.3.15/cas-server-core-api-events-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-configuration-api/5.3.15/cas-server-core-configuration-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-configuration/5.3.15/cas-server-core-api-configuration-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/projectlombok/lombok/1.18.10/lombok-1.18.10.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-jpa-service-registry/5.3.15/cas-server-support-jpa-service-registry-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-validation/5.3.15/cas-server-core-validation-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-validation/5.3.15/cas-server-core-api-validation-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-protocol/5.3.15/cas-server-core-api-protocol-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-jdbc-authentication/5.3.15/cas-server-support-jdbc-authentication-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/shiro/shiro-lang/1.4.0/shiro-lang-1.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/shiro/shiro-cache/1.4.0/shiro-cache-1.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/shiro/shiro-crypto-hash/1.4.0/shiro-crypto-hash-1.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/shiro/shiro-crypto-core/1.4.0/shiro-crypto-core-1.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/shiro/shiro-crypto-cipher/1.4.0/shiro-crypto-cipher-1.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/shiro/shiro-config-core/1.4.0/shiro-config-core-1.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/shiro/shiro-config-ogdl/1.4.0/shiro-config-ogdl-1.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/shiro/shiro-event/1.4.0/shiro-event-1.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-webflow/5.3.15/cas-server-core-webflow-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-throttle-core/5.3.15/cas-server-support-throttle-core-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-webflow-api/5.3.15/cas-server-core-webflow-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-web-api/5.3.15/cas-server-core-web-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-api-web/5.3.15/cas-server-core-api-web-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/thymeleaf/thymeleaf-spring4/3.0.11.RELEASE/thymeleaf-spring4-3.0.11.RELEASE.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/thymeleaf/thymeleaf/3.0.11.RELEASE/thymeleaf-3.0.11.RELEASE.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/attoparser/attoparser/2.0.5.RELEASE/attoparser-2.0.5.RELEASE.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/boot/spring-boot-starter-thymeleaf/1.5.18.RELEASE/spring-boot-starter-thymeleaf-1.5.18.RELEASE.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/github/oshi/oshi-core/3.5.0/oshi-core-3.5.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/threeten/threetenbp/1.3.6/threetenbp-1.3.6.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-security-filter/2.0.10.4/cas-server-security-filter-2.0.10.4.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-actions/5.3.15/cas-server-support-actions-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-support-geolocation/5.3.15/cas-server-support-geolocation-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/io/userinfo/userinfo-java/1.1.0/userinfo-java-1.1.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/squareup/retrofit/retrofit/1.6.1/retrofit-1.6.1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apereo/cas/cas-server-core-util-api/5.3.15/cas-server-core-util-api-5.3.15.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/bitbucket/b_c/jose4j/0.6.3/jose4j-0.6.3.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/google/zxing/core/3.3.2/core-3.3.2.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/vdurmont/semver4j/2.2.0/semver4j-2.2.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="EXTJAR" id="C:\Users\admin\.p2\pool\plugins\org.junit.jupiter.api_5.4.0.v20190212-2109.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="EXTJAR" id="C:\Users\admin\.p2\pool\plugins\org.junit.jupiter.engine_5.4.0.v20190212-2109.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="EXTJAR" id="C:\Users\admin\.p2\pool\plugins\org.junit.jupiter.migrationsupport_5.4.0.v20190212-2109.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="EXTJAR" id="C:\Users\admin\.p2\pool\plugins\org.junit.jupiter.params_5.4.0.v20190212-2109.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="EXTJAR" id="C:\Users\admin\.p2\pool\plugins\org.junit.platform.commons_1.4.0.v20190212-2109.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="EXTJAR" id="C:\Users\admin\.p2\pool\plugins\org.junit.platform.engine_1.4.0.v20190212-2109.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="EXTJAR" id="C:\Users\admin\.p2\pool\plugins\org.junit.platform.launcher_1.4.0.v20190212-2109.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="EXTJAR" id="C:\Users\admin\.p2\pool\plugins\org.junit.platform.runner_1.4.0.v20190212-2109.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="EXTJAR" id="C:\Users\admin\.p2\pool\plugins\org.junit.platform.suite.api_1.4.0.v20190212-2109.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="EXTJAR" id="C:\Users\admin\.p2\pool\plugins\org.junit.vintage.engine_5.4.0.v20190212-2109.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="EXTJAR" id="C:\Users\admin\.p2\pool\plugins\org.opentest4j_1.1.1.v20190212-2109.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="EXTJAR" id="C:\Users\admin\.p2\pool\plugins\org.apiguardian_1.0.0.v20190212-2109.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="JUNIT_HOME/junit.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="EXTJAR" id="C:\Users\admin\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="PLUGIN" id="org.eclipse.jst.ws.annotations.core" enabled="true" runInBatchMode="false"/>
 </factorypath>
