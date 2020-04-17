@@ -1,1 +1,2 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.lucky.sso.config.AccoutAuthenticationConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.lucky.sso.config.AccoutAuthenticationConfiguration,\
+com.lucky.sso.login.webflow.config.AccoutWebflowConfiguration
