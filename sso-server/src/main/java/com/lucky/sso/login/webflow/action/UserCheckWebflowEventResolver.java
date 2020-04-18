@@ -57,7 +57,7 @@ public class UserCheckWebflowEventResolver  extends AbstractCasWebflowEventResol
 	                event = newEvent(CasWebflowConstants.TRANSITION_ID_ERROR, e);
 	            }
 	            final HttpServletResponse response = WebUtils.getHttpServletResponseFromExternalWebflowContext(context);
-	            response.setStatus(HttpStatus.UNAUTHORIZED.value());
+	            // response.setStatus(HttpStatus.UNAUTHORIZED.value());
 	            return CollectionUtils.wrapSet(event);
 	        }
 	}

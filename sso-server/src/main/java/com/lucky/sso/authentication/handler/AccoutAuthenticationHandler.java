@@ -1,4 +1,4 @@
-package com.lucky.sso.authentication;
+package com.lucky.sso.authentication.handler;
 
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
@@ -27,9 +27,9 @@ import org.springframework.dao.IncorrectResultSizeDataAccessException;
  * @date:  2020年3月30日 上午10:47:52
  * @Description: 身份认证
  */
-public class AccoutAuthentication extends QueryAndEncodeDatabaseAuthenticationHandler  {
+public class AccoutAuthenticationHandler extends QueryAndEncodeDatabaseAuthenticationHandler  {
 	
-	public AccoutAuthentication(final String name, final ServicesManager servicesManager, final PrincipalFactory principalFactory,
+	public AccoutAuthenticationHandler(final String name, final ServicesManager servicesManager, final PrincipalFactory principalFactory,
             final Integer order, final DataSource dataSource, final String algorithmName, final String sql, 
             final String passwordFieldName, final String saltFieldName, final String expiredFieldName, final String disabledFieldName,
             final String numberOfIterationsFieldName, final long numberOfIterations, final String staticSalt) {
@@ -48,7 +48,7 @@ public class AccoutAuthentication extends QueryAndEncodeDatabaseAuthenticationHa
             throw new GeneralSecurityException("Authentication handler is not configured correctly");
         }
 
-        final String loginName = transformedCredential.getUsername();
+        String loginName = transformedCredential.getUsername();
         try {
         	String querySql = this.sql.replace("?", loginName);
         	//Account account = getJdbcTemplate().queryForObject(querySql, Account.class);
@@ -70,6 +70,8 @@ public class AccoutAuthentication extends QueryAndEncodeDatabaseAuthenticationHa
                     throw new AccountDisabledException("Account has been disabled");
                 }
             }
+            
+            loginName = values.get("employee_id").toString();
             return createHandlerResult(transformedCredential, this.principalFactory.createPrincipal(loginName), new ArrayList<>(0));
 
         } catch (final IncorrectResultSizeDataAccessException e) {

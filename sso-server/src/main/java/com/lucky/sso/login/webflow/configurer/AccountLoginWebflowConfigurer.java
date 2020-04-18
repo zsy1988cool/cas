@@ -61,20 +61,11 @@ public class AccountLoginWebflowConfigurer extends DefaultLoginWebflowConfigurer
         final ActionState handler = createActionState(flow, AccountsConstants.STATE_ID_HANDLE_USERCHECK_FAILURE,
         		AccountsConstants.ACTION_ID_USERCHECK_EXCEPTION_HANDLER);
         createTransitionForState(handler, AccountDisabledException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
-        createTransitionForState(handler, AccountLockedException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
-        createTransitionForState(handler, AccountPasswordMustChangeException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
-        createTransitionForState(handler, CredentialExpiredException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
-        createTransitionForState(handler, InvalidLoginLocationException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
-        createTransitionForState(handler, InvalidLoginTimeException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
         createTransitionForState(handler, FailedLoginException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
         createTransitionForState(handler, AccountNotFoundException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
         createTransitionForState(handler, UnauthorizedServiceForPrincipalException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
-        createTransitionForState(handler, PrincipalException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
-        createTransitionForState(handler, UnsatisfiedAuthenticationPolicyException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
-        createTransitionForState(handler, UnauthorizedAuthenticationException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
         createTransitionForState(handler, CasWebflowConstants.STATE_ID_SERVICE_UNAUTHZ_CHECK, AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
         createStateDefaultTransition(handler, AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
-
     }
 	
 	 /**

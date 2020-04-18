@@ -100,9 +100,16 @@
 			<artifactId>cas-server-core</artifactId>
 			<version>${cas.version}</version>
 		</dependency>
+		
+		<!-- logout -->
 		<dependency>
 			<groupId>org.apereo.cas</groupId>
 			<artifactId>cas-server-core-logout-api</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-core-tickets-api</artifactId>
 			<version>${cas.version}</version>
 		</dependency>
 		<dependency>
@@ -231,24 +238,24 @@
 			<artifactId>cas-server-support-jdbc-authentication</artifactId>
 			<version>${cas.version}</version>
 		</dependency>
-		
+
 		<!-- login type -->
 		<dependency>
-            <groupId>org.apereo.cas</groupId>
-            <artifactId>cas-server-core-webflow</artifactId>
-            <version>${cas.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apereo.cas</groupId>
-            <artifactId>cas-server-core-webflow-api</artifactId>
-             <version>${cas.version}</version>
-        </dependency>
-         <dependency>
-            <groupId>org.apereo.cas</groupId>
-            <artifactId>cas-server-core-web-api</artifactId>
-             <version>${cas.version}</version>
-        </dependency>
-        <dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-core-webflow</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-core-webflow-api</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-core-web-api</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.apereo.cas</groupId>
 			<artifactId>cas-server-support-actions</artifactId>
 			<version>${cas.version}</version>
@@ -258,13 +265,25 @@
 			<artifactId>cas-server-core-util-api</artifactId>
 			<version>${cas.version}</version>
 		</dependency>
-		
-        <dependency>
-             <groupId>javax.servlet</groupId>
-             <artifactId>javax.servlet-api</artifactId>
-             <version>3.1.0</version>
-             <scope>provided</scope>
-        </dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- support throttle -->
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-throttle-core</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-throttle-jdbc</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
 	</dependencies>
 
 	<properties>

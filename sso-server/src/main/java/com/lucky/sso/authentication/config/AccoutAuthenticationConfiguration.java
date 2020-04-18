@@ -1,4 +1,4 @@
-package com.lucky.sso.config;
+package com.lucky.sso.authentication.config;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -23,9 +23,9 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.lucky.sso.authentication.AccoutAuthentication;
+import com.lucky.sso.authentication.handler.AccoutAuthenticationHandler;
 
-@Configuration("CountAuthenticationConfiguration")
+@Configuration("accountAuthenticationConfiguration")
 @EnableConfigurationProperties(CasConfigurationProperties.class)
 public class AccoutAuthenticationConfiguration implements AuthenticationEventExecutionPlanConfigurer  {
 	@Autowired
@@ -55,7 +55,7 @@ public class AccoutAuthenticationConfiguration implements AuthenticationEventExe
 		final JdbcAuthenticationProperties jdbc = casProperties.getAuthn().getJdbc();
 		final QueryEncodeJdbcAuthenticationProperties b = jdbc.getEncode().get(0);
 		
-		final AccoutAuthentication h = new AccoutAuthentication(b.getName(), servicesManager,
+		final AccoutAuthenticationHandler h = new AccoutAuthenticationHandler(b.getName(), servicesManager,
 				jdbcPrincipalFactory, b.getOrder(), JpaBeans.newDataSource(b), b.getAlgorithmName(), b.getSql(), b.getPasswordFieldName(),
 	            b.getSaltFieldName(), b.getExpiredFieldName(), b.getDisabledFieldName(), b.getNumberOfIterationsFieldName(), b.getNumberOfIterations(),
 	            b.getStaticSalt());
