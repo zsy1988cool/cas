@@ -1,4 +1,4 @@
-package com.lucky.sso.login.logout.config;
+package com.lucky.sso.logout.config;
 
 import org.apereo.cas.configuration.CasConfigurationProperties;
 import org.apereo.cas.logout.LogoutExecutionPlan;
@@ -11,8 +11,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.lucky.sso.login.logout.message.AccountLogoutManager;
-import com.lucky.sso.login.logout.message.AccountLogoutMessageCreator;
+import com.lucky.sso.logout.message.AccountLogoutManager;
+import com.lucky.sso.logout.message.AccountLogoutMessageCreator;
 
 @Configuration("accountLogoutConfiguration")
 @EnableConfigurationProperties(CasConfigurationProperties.class)

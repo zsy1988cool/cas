@@ -1,4 +1,4 @@
-package com.lucky.sso.login.logout.message;
+package com.lucky.sso.logout.message;
 
 import org.apereo.cas.authentication.Authentication;
 import org.apereo.cas.authentication.AuthenticationCredentialsThreadLocalBinder;
