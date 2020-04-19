@@ -276,12 +276,7 @@
 		<!-- support throttle -->
 		<dependency>
 			<groupId>org.apereo.cas</groupId>
-			<artifactId>cas-server-support-throttle-core</artifactId>
-			<version>${cas.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apereo.cas</groupId>
-			<artifactId>cas-server-support-throttle-jdbc</artifactId>
+			<artifactId>cas-server-support-audit-jdbc</artifactId>
 			<version>${cas.version}</version>
 		</dependency>
 	</dependencies>

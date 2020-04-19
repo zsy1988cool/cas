@@ -56,6 +56,20 @@
                                 <label for="doChangePassword" th:text="#{screen.button.changePassword}">Change Password</label>
                             </p>
                         </section>
+                        
+                        <section class="form-check" th:if="${loginlocked}">
+                            <p>
+                                <input type="checkbox" name="doChangePassword" id="doChangePassword"
+                                       value="true" th:checked="${param.doChangePassword != null}" tabindex="4"/>
+                                <label>Account is locked</label>
+                            </p>
+                        </section>
+                        
+                        <div th:if="${loginlocked}">
+	                        <span class="fa fa-question-circle"></span>
+	                        <span th:utext="#{screen.pm.button.forgotpwd}">Forgot your password?</span>
+                        <p/>
+                       </div>
 
                         <input type="hidden" name="execution" th:value="${flowExecutionKey}"/>
                         <input type="hidden" name="_eventId" value="submit"/>

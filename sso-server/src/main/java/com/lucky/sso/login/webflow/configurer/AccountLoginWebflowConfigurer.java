@@ -50,6 +50,7 @@ public class AccountLoginWebflowConfigurer extends DefaultLoginWebflowConfigurer
         createHandleUsercheckFailureAction(flow);
         createTerminateSessionAction(flow);
         createTicketGrantingTicketCheckAction(flow);
+        createLoginFailureCheckAction(flow);
     }
 	
 	 /**
@@ -77,19 +78,31 @@ public class AccountLoginWebflowConfigurer extends DefaultLoginWebflowConfigurer
     protected void createHandleAuthenticationFailureAction(final Flow flow) {
         final ActionState handler = createActionState(flow, CasWebflowConstants.STATE_ID_HANDLE_AUTHN_FAILURE,
             CasWebflowConstants.ACTION_ID_AUTHENTICATION_EXCEPTION_HANDLER);
-        createTransitionForState(handler, AccountDisabledException.class.getSimpleName(), CasWebflowConstants.VIEW_ID_ACCOUNT_DISABLED);
-        createTransitionForState(handler, AccountLockedException.class.getSimpleName(), CasWebflowConstants.VIEW_ID_ACCOUNT_LOCKED);
-        createTransitionForState(handler, AccountPasswordMustChangeException.class.getSimpleName(), CasWebflowConstants.VIEW_ID_MUST_CHANGE_PASSWORD);
-        createTransitionForState(handler, CredentialExpiredException.class.getSimpleName(), CasWebflowConstants.VIEW_ID_EXPIRED_PASSWORD);
-        createTransitionForState(handler, InvalidLoginLocationException.class.getSimpleName(), CasWebflowConstants.VIEW_ID_INVALID_WORKSTATION);
-        createTransitionForState(handler, InvalidLoginTimeException.class.getSimpleName(), CasWebflowConstants.VIEW_ID_INVALID_AUTHENTICATION_HOURS);
-        createTransitionForState(handler, FailedLoginException.class.getSimpleName(), CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM);
-        createTransitionForState(handler, AccountNotFoundException.class.getSimpleName(), CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM);
-        createTransitionForState(handler, UnauthorizedServiceForPrincipalException.class.getSimpleName(), CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM);
-        createTransitionForState(handler, PrincipalException.class.getSimpleName(), CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM);
-        createTransitionForState(handler, UnsatisfiedAuthenticationPolicyException.class.getSimpleName(), CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM);
-        createTransitionForState(handler, UnauthorizedAuthenticationException.class.getSimpleName(), CasWebflowConstants.VIEW_ID_AUTHENTICATION_BLOCKED);
+  
+        createTransitionForState(handler, AccountLockedException.class.getSimpleName(), AccountsConstants.STATE_ID_HANDLE_LOGIN_FAILURE_CHECK);
+        createTransitionForState(handler, AccountPasswordMustChangeException.class.getSimpleName(), AccountsConstants.STATE_ID_HANDLE_LOGIN_FAILURE_CHECK);
+        createTransitionForState(handler, CredentialExpiredException.class.getSimpleName(), AccountsConstants.STATE_ID_HANDLE_LOGIN_FAILURE_CHECK);
+        createTransitionForState(handler, InvalidLoginLocationException.class.getSimpleName(), AccountsConstants.STATE_ID_HANDLE_LOGIN_FAILURE_CHECK);
+        createTransitionForState(handler, InvalidLoginTimeException.class.getSimpleName(), AccountsConstants.STATE_ID_HANDLE_LOGIN_FAILURE_CHECK);
+        createTransitionForState(handler, FailedLoginException.class.getSimpleName(), AccountsConstants.STATE_ID_HANDLE_LOGIN_FAILURE_CHECK);
+        createTransitionForState(handler, PrincipalException.class.getSimpleName(), AccountsConstants.STATE_ID_HANDLE_LOGIN_FAILURE_CHECK);
+        createTransitionForState(handler, UnsatisfiedAuthenticationPolicyException.class.getSimpleName(), AccountsConstants.STATE_ID_HANDLE_LOGIN_FAILURE_CHECK);
+        createTransitionForState(handler, UnauthorizedAuthenticationException.class.getSimpleName(), AccountsConstants.STATE_ID_HANDLE_LOGIN_FAILURE_CHECK);
         createTransitionForState(handler, CasWebflowConstants.STATE_ID_SERVICE_UNAUTHZ_CHECK, CasWebflowConstants.STATE_ID_SERVICE_UNAUTHZ_CHECK);
         createStateDefaultTransition(handler, CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM);
+    }
+	
+	/**
+     * Create login fail action.
+     *
+     * @param flow the flow
+     */
+    protected void createLoginFailureCheckAction(final Flow flow) {
+        final ActionState action = createActionState(flow, AccountsConstants.STATE_ID_HANDLE_LOGIN_FAILURE_CHECK,
+        		AccountsConstants.ACTION_ID_HANDLE_LOGIN_FAILURE_CHECK);
+        createTransitionForState(action, CasWebflowConstants.TRANSITION_ID_AUTHENTICATION_FAILURE, CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM);
+        createTransitionForState(action, CasWebflowConstants.TRANSITION_ID_ERROR, AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
+        createTransitionForState(action, CasWebflowConstants.TRANSITION_ID_SUCCESS, CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM);
+        createTransitionForState(action, CasWebflowConstants.TRANSITION_ID_SUCCESS_WITH_WARNINGS, CasWebflowConstants.VIEW_ID_SHOW_AUTHN_WARNING_MSGS);
     }
 }

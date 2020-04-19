@@ -23,6 +23,16 @@ public interface AccountsConstants {
     String STATE_ID_VIEW_USERCHECK_FORM = "viewUsercheckForm";
     
     /**
+     * The state 'handleLoginFailureCheck'.
+     */
+    String STATE_ID_HANDLE_LOGIN_FAILURE_CHECK = "handleLoginFailureCheck";
+    
+    /**
+     * The state 'handleLoginFailureCheck'.
+     */
+    String ACTION_ID_HANDLE_LOGIN_FAILURE_CHECK = "handleLoginFailureCheckAction";
+    
+    /**
      * The account status 'to activated'.
      */
     String ACCOUNT_STATUS_TO_ACTIVATED = "1";

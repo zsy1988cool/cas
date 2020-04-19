@@ -1,4 +1,4 @@
-package com.lucky.sso.login.webflow.action;
+package com.lucky.sso.login.webflow.action.usercheck;
 
 import org.apereo.cas.util.CollectionUtils;
 import java.util.Set;
@@ -56,7 +56,7 @@ public class UserCheckWebflowEventResolver  extends AbstractCasWebflowEventResol
 	            if (event == null) {
 	                event = newEvent(CasWebflowConstants.TRANSITION_ID_ERROR, e);
 	            }
-	            final HttpServletResponse response = WebUtils.getHttpServletResponseFromExternalWebflowContext(context);
+	            //final HttpServletResponse response = WebUtils.getHttpServletResponseFromExternalWebflowContext(context);
 	            // response.setStatus(HttpStatus.UNAUTHORIZED.value());
 	            return CollectionUtils.wrapSet(event);
 	        }

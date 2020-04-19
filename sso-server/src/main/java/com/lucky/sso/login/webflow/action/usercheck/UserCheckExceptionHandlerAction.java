@@ -1,4 +1,4 @@
-package com.lucky.sso.login.webflow.action;
+package com.lucky.sso.login.webflow.action.usercheck;
 
 import java.util.Set;
 
@@ -11,7 +11,7 @@ import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
 import org.springframework.webflow.execution.RequestContext;
 
-public class UsercheckExceptionHandlerAction extends AuthenticationExceptionHandlerAction {
+public class UserCheckExceptionHandlerAction extends AuthenticationExceptionHandlerAction {
 
 	private static final String DEFAULT_USERCHECK_MESSAGE_BUNDLE_PREFIX = "usercheckFailure.";
 	private static final String USERCHECK_UNKNOWN = "UNKNOWN";
@@ -22,7 +22,7 @@ public class UsercheckExceptionHandlerAction extends AuthenticationExceptionHand
 	 */
 	private String messageBundlePrefix = DEFAULT_USERCHECK_MESSAGE_BUNDLE_PREFIX;
 
-	public UsercheckExceptionHandlerAction(final Set<Class<? extends Throwable>> errors) {
+	public UserCheckExceptionHandlerAction(final Set<Class<? extends Throwable>> errors) {
 		super(errors);
 	}
 

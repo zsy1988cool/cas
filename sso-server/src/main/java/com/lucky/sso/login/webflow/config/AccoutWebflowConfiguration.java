@@ -3,6 +3,8 @@ package com.lucky.sso.login.webflow.config;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import javax.sql.DataSource;
+
 import org.apereo.cas.CentralAuthenticationService;
 import org.apereo.cas.audit.AuditableExecution;
 import org.apereo.cas.authentication.AuthenticationServiceSelectionPlan;
@@ -17,6 +19,7 @@ import org.apereo.cas.authentication.principal.PrincipalFactory;
 import org.apereo.cas.configuration.CasConfigurationProperties;
 import org.apereo.cas.configuration.model.support.jdbc.JdbcAuthenticationProperties;
 import org.apereo.cas.configuration.model.support.jdbc.QueryEncodeJdbcAuthenticationProperties;
+import org.apereo.cas.configuration.model.support.throttle.ThrottleProperties;
 import org.apereo.cas.configuration.support.JpaBeans;
 import org.apereo.cas.services.MultifactorAuthenticationProviderSelector;
 import org.apereo.cas.services.ServicesManager;
@@ -38,9 +41,11 @@ import org.springframework.webflow.definition.registry.FlowDefinitionRegistry;
 import org.springframework.webflow.engine.builder.support.FlowBuilderServices;
 import org.springframework.webflow.execution.Action;
 
-import com.lucky.sso.login.webflow.action.UserCheckAction;
-import com.lucky.sso.login.webflow.action.UserCheckWebflowEventResolver;
-import com.lucky.sso.login.webflow.action.UsercheckExceptionHandlerAction;
+import com.lucky.sso.login.webflow.action.failure.AccountThrottledSubmissionHandler;
+import com.lucky.sso.login.webflow.action.failure.HandleLoginFailureCheckAction;
+import com.lucky.sso.login.webflow.action.usercheck.UserCheckAction;
+import com.lucky.sso.login.webflow.action.usercheck.UserCheckExceptionHandlerAction;
+import com.lucky.sso.login.webflow.action.usercheck.UserCheckWebflowEventResolver;
 import com.lucky.sso.login.webflow.configurer.AccountLoginWebflowConfigurer;
 import com.lucky.sso.login.webflow.handler.AccountsUserAuthenticationHandler;
 
@@ -83,7 +88,13 @@ public class AccoutWebflowConfiguration {
     
     @Bean(name="usercheckExceptionHandler")
     public Action usercheckExceptionHandler() {
-        return new UsercheckExceptionHandlerAction(handledUsercheckExceptions());
+        return new UserCheckExceptionHandlerAction(handledUsercheckExceptions());
+    }
+    
+
+    @Bean(name="handleLoginFailureCheckAction")
+    public Action handleLoginFailureCheckAction() {
+    	return new HandleLoginFailureCheckAction(accountThrottledSubmissionHandler());
     }
     
     @Bean
@@ -164,5 +175,22 @@ public class AccoutWebflowConfiguration {
 		final AccountsUserAuthenticationHandler h = new AccountsUserAuthenticationHandler(b.getName(), servicesManager,
 				jdbcPrincipalFactory, b.getOrder(), JpaBeans.newDataSource(b));
 	        return h;
+    }
+
+    @Bean
+    public DataSource inspektrAuditTrailDataSource() {
+        return JpaBeans.newDataSource(casProperties.getAuthn().getThrottle().getJdbc());
+    }
+
+    @Bean
+    public AccountThrottledSubmissionHandler accountThrottledSubmissionHandler() {
+        final ThrottleProperties throttle = casProperties.getAuthn().getThrottle();
+        final ThrottleProperties.Failure failure = throttle.getFailure();
+        return new AccountThrottledSubmissionHandler(failure.getThreshold(),
+            failure.getRangeSeconds(),
+            inspektrAuditTrailDataSource(),
+            throttle.getAppcode(),
+            throttle.getJdbc().getAuditQuery(),
+            failure.getCode());
     }
 }

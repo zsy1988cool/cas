@@ -1,4 +1,4 @@
-package com.lucky.sso.login.webflow.action;
+package com.lucky.sso.login.webflow.action.usercheck;
 
 import org.apereo.cas.web.flow.resolver.impl.AbstractCasWebflowEventResolver;
 import org.springframework.webflow.action.AbstractAction;
