@@ -59,9 +59,9 @@
                         
                         <section class="form-check" th:if="${loginlocked}">
                             <p>
-                                <input type="checkbox" name="doChangePassword" id="doChangePassword"
+                                <input type="checkbox" name="doLoginLock" id="doChangePassword"
                                        value="true" th:checked="${param.doChangePassword != null}" tabindex="4"/>
-                                <label>Account is locked</label>
+                                <label  for=""doLoginLock""  th:text="${loginlocked_message}">Account is locked</label>
                             </p>
                         </section>
                         

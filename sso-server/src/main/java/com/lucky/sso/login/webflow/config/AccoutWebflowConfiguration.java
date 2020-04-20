@@ -29,6 +29,8 @@ import org.apereo.cas.ticket.registry.TicketRegistrySupport;
 import org.apereo.cas.web.flow.CasWebflowConfigurer;
 import org.apereo.cas.web.flow.configurer.DefaultLoginWebflowConfigurer;
 import org.apereo.cas.web.flow.resolver.impl.AbstractCasWebflowEventResolver;
+import org.apereo.cas.web.support.NoOpThrottledSubmissionHandlerInterceptor;
+import org.apereo.cas.web.support.ThrottledSubmissionHandlerInterceptor;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -50,7 +52,7 @@ import com.lucky.sso.login.webflow.configurer.AccountLoginWebflowConfigurer;
 import com.lucky.sso.login.webflow.handler.AccountsUserAuthenticationHandler;
 
 @Configuration("AccoutWebflowConfiguration")
-@EnableConfigurationProperties(CasConfigurationProperties.class)
+@EnableConfigurationProperties({CasConfigurationProperties.class})
 public class AccoutWebflowConfiguration {
 	@Autowired
 	private CasConfigurationProperties casProperties;
@@ -176,6 +178,12 @@ public class AccoutWebflowConfiguration {
 				jdbcPrincipalFactory, b.getOrder(), JpaBeans.newDataSource(b));
 	        return h;
     }
+    
+    // 错误次数处理
+    @Bean(name = "authenticationThrottle")
+    public ThrottledSubmissionHandlerInterceptor authenticationThrottle() {
+    	return new NoOpThrottledSubmissionHandlerInterceptor();
+    }
 
     @Bean
     public DataSource inspektrAuditTrailDataSource() {
@@ -184,6 +192,10 @@ public class AccoutWebflowConfiguration {
 
     @Bean
     public AccountThrottledSubmissionHandler accountThrottledSubmissionHandler() {
+//    	int recaptchahold = accountWebflowProperties.getRecaptchahold();
+//    	int smshold = accountWebflowProperties.getSmshold();
+//    	int lockaddseconds = accountWebflowProperties.getLockaddseconds();
+//    	int locklimitseconds = accountWebflowProperties.getLocklimitseconds();
         final ThrottleProperties throttle = casProperties.getAuthn().getThrottle();
         final ThrottleProperties.Failure failure = throttle.getFailure();
         return new AccountThrottledSubmissionHandler(failure.getThreshold(),

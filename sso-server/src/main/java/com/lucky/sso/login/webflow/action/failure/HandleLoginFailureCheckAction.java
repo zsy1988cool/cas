@@ -1,5 +1,6 @@
 package com.lucky.sso.login.webflow.action.failure;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -28,8 +29,19 @@ public class HandleLoginFailureCheckAction extends AbstractAction {
 		}
 		
 		List<Date> failureTimes = accountThrottleSubmissionHandler.accessFailuresDatetimes(username);
-		Boolean locked = (failureTimes.size() >= 3);
-		AccountWebUtils.putLoginLocked(context, locked);
+		
+		int threshold = accountThrottleSubmissionHandler.getFailureThreshold();
+		Boolean locked = (failureTimes.size() >= threshold);
+		if(locked) {
+			Date firstFailureTime = failureTimes.get(failureTimes.size() - 1);
+			Date unlockDateTime = accountThrottleSubmissionHandler.getUnlockDate(firstFailureTime);
+			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			String message="解锁时间" + df.format(unlockDateTime);
+
+			System.out.println(message);
+			AccountWebUtils.putLoginLocked(context, locked, message);
+		}
+		
 		return success();
 	}
 

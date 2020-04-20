@@ -2,6 +2,7 @@ package com.lucky.sso.login.webflow.action.failure;
 
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Instant;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.util.Date;
@@ -22,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 
 
 /**
- * 登陆错误审计拦截器
+ * 登陆错误审计处理器
  *
  * @author Seyi.zhou
  */
@@ -62,21 +63,21 @@ public class AccountThrottledSubmissionHandler {
         return DateTimeUtils.timestampOf(cutoff);
     }
     
+    /**
+     * Gets inlock time in range cut off date.
+     *
+     * @return the failure time in range cut off date
+     */
+    public Date getUnlockDate (Date lockedDate) {
+        Instant instant = lockedDate.toInstant();
+        final ZonedDateTime cutoff = ZonedDateTime.ofInstant(instant, ZoneOffset.UTC).plusSeconds(getFailureRangeInSeconds());
+        return DateTimeUtils.timestampOf(cutoff);
+    }
+    
     public List<Date> accessFailuresDatetimes(String username) {
     	final ClientInfo clientInfo = ClientInfoHolder.getClientInfo();
         final String remoteAddress = clientInfo.getClientIpAddress();
         Date failureCutOffDate = getFailureInRangeCutOffDate();
-        
-        
-        // print 
-        System.out.println("this.sqlQueryAudit:" + this.sqlQueryAudit);
-        System.out.println("remoteAddress:" + remoteAddress);
-        System.out.println("getUsernameParameterFromRequest:" + username);
-        System.out.println("getAuthenticationFailureCode:" + getAuthenticationFailureCode());
-        System.out.println("getApplicationCode:" + getApplicationCode());
-        System.out.println("failureCutOffDate:" + failureCutOffDate);
-        Date now= new Date(0);
-        System.out.println("now:" + now);
 
         final List<Timestamp> failuresInAudits = this.jdbcTemplate.query(
             this.sqlQueryAudit,
@@ -89,7 +90,7 @@ public class AccountThrottledSubmissionHandler {
             new int[]{Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.TIMESTAMP},
             (resultSet, i) -> resultSet.getTimestamp(1));
 
-        System.out.println("dateCount:" + failureCutOffDate.toString() + "failures count:" + failuresInAudits.size());
+        System.out.println("dateCut:" + failureCutOffDate.toString() + "failures count:" + failuresInAudits.size());
         final List<Date> failures = failuresInAudits.stream().map(t -> new Date(t.getTime())).collect(Collectors.toList());
         return failures;
     }
