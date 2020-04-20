@@ -43,6 +43,8 @@ import org.springframework.webflow.definition.registry.FlowDefinitionRegistry;
 import org.springframework.webflow.engine.builder.support.FlowBuilderServices;
 import org.springframework.webflow.execution.Action;
 
+import com.lucky.sso.login.webflow.action.captcha.CaptchaVerificationAction;
+import com.lucky.sso.login.webflow.action.captcha.CaptchaVerificationResolver;
 import com.lucky.sso.login.webflow.action.failure.AccountThrottledSubmissionHandler;
 import com.lucky.sso.login.webflow.action.failure.HandleLoginFailureCheckAction;
 import com.lucky.sso.login.webflow.action.usercheck.UserCheckAction;
@@ -177,6 +179,25 @@ public class AccoutWebflowConfiguration {
 		final AccountsUserAuthenticationHandler h = new AccountsUserAuthenticationHandler(b.getName(), servicesManager,
 				jdbcPrincipalFactory, b.getOrder(), JpaBeans.newDataSource(b));
 	        return h;
+    }
+    
+    // captcha
+    @Bean(name="captchaVerificationResolver")
+    public CaptchaVerificationResolver initialCaptchaVerificationResolver() {
+        final CaptchaVerificationResolver r = new CaptchaVerificationResolver(
+            authenticationSystemSupport.getIfAvailable(),
+            centralAuthenticationService.getIfAvailable(),
+            servicesManager,
+            ticketRegistrySupport.getIfAvailable(),
+            warnCookieGenerator.getIfAvailable(),
+            authenticationServiceSelectionPlan.getIfAvailable(),
+            multifactorAuthenticationProviderSelector);
+        return r;
+    }
+    
+    @Bean(name="captchaVerificationAction")
+    public Action captchaVerificationAction() {
+        return new CaptchaVerificationAction(initialCaptchaVerificationResolver());
     }
     
     // 错误次数处理

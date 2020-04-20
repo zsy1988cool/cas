@@ -39,4 +39,14 @@ public class AccountWebUtils {
     public static void putCapchaEnabled(final RequestContext context, final Boolean capchaEnabled) {
         context.getFlowScope().put(PARAMETER_CAPCHA_ENABLED, capchaEnabled);
     }
+    
+    /**
+     * Get lcapcha status from flow scope.
+     *
+     * @param context  the context
+     * return the capchaEnabled
+     */
+    public static Boolean getCapchaEnabled(final RequestContext context) {
+        return (Boolean)context.getFlowScope().get(PARAMETER_CAPCHA_ENABLED);
+    }
 }

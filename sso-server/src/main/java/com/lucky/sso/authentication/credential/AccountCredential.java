@@ -22,7 +22,5 @@ public class AccountCredential extends UsernamePasswordCredential {
     
     private String email;
     private String telephone;
-    private String capcha;
-    private Boolean capchaEnabled;
-    
+    private String capcha;    
 }

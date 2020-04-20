@@ -1,4 +1,4 @@
-package com.lucky.sso.kaptcha.util;
+package com.lucky.sso.login.webflow.action.captcha;
 
 import java.util.Properties;
 

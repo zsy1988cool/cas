@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.lucky.sso.kaptcha.controller.CaptchaController;
+import com.lucky.sso.login.webflow.action.captcha.CaptchaController;
 
 @Configuration("accountControllerConfiguration")
 @EnableConfigurationProperties(CasConfigurationProperties.class)

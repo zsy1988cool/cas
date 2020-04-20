@@ -1,4 +1,4 @@
-package com.lucky.sso.login.webflow.action.exception;
+package com.lucky.sso.login.webflow.action.captcha;
 
 import org.apereo.cas.authentication.AuthenticationException;
 
@@ -8,17 +8,18 @@ import org.apereo.cas.authentication.AuthenticationException;
  * @Author seyi.zhou@luckincoffee.com
  * @Date 2020年4月20日 下午4:45:12
  */
-public class CapchaErrorException extends AuthenticationException {
+public class CaptchaErrorException extends AuthenticationException {
 	/**
 	 * Serialization metadata. 
 	 */
 	private static final long serialVersionUID = -5032827784134751797L;
 
-	public CapchaErrorException(){
+	public CaptchaErrorException(){
         super();
     }
 
-    public CapchaErrorException(String msg) {
+    public CaptchaErrorException(String msg) {
         super(msg);
     }
 }
+

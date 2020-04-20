@@ -20,11 +20,8 @@ import org.apereo.cas.authentication.principal.PrincipalFactory;
 import org.apereo.cas.services.ServicesManager;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.lucky.sso.authentication.credential.AccountCredential;
-import com.lucky.sso.login.webflow.action.exception.CapchaErrorException;
 
 /**
  * @author Seyi.Zhou
@@ -47,13 +44,6 @@ public class AccoutAuthenticationHandler extends QueryAndEncodeDatabaseAuthentic
 	protected AuthenticationHandlerExecutionResult doAuthentication(final Credential credential)
 			throws GeneralSecurityException, PreventedException {
 		AccountCredential accountCredential = (AccountCredential) credential;
-		String capcha = accountCredential.getCapcha();
-		ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-		String capchaFromSession = attributes.getRequest().getSession().getAttribute("captcha_code").toString();
-
-		if (capcha == null || !capcha.equalsIgnoreCase(capchaFromSession)) {
-			throw new CapchaErrorException("Sorry, capcha not correct !");
-		}
 
 		if (StringUtils.isBlank(this.sql) || StringUtils.isBlank(this.algorithmName) || getJdbcTemplate() == null) {
 			throw new GeneralSecurityException("Authentication handler is not configured correctly");

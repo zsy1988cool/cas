@@ -72,6 +72,21 @@ public class AccountLoginWebflowConfigurer extends DefaultLoginWebflowConfigurer
         createTransitionForState(handler, CasWebflowConstants.STATE_ID_SERVICE_UNAUTHZ_CHECK, AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
         createStateDefaultTransition(handler, AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
     }
+    
+    /**
+     * Create handle captcha verify action.
+     *
+     * @param flow the flow
+     */
+    protected void createHandleCaptchaVerificationAction(final Flow flow) {
+        final ActionState handler = createActionState(flow, AccountsConstants.STATE_ID_HANDLE_CAPTCHA_VERIFY,
+        		AccountsConstants.ACTION_ID_CAPTCHA_VERIFICATION_ACTION);
+        createTransitionForState(handler, CaptchaErrorException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
+        createTransitionForState(handler, FailedLoginException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
+        createTransitionForState(handler, AccountNotFoundException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
+        createTransitionForState(handler, UnauthorizedServiceForPrincipalException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
+        createStateDefaultTransition(handler, CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM);
+    }
 	
 	 /**
      * Create handle authentication failure action.

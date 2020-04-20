@@ -1,4 +1,4 @@
-package com.lucky.sso.kaptcha.controller;
+package com.lucky.sso.login.webflow.action.captcha;
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
-import com.lucky.sso.kaptcha.util.KaptchaCodeUtils;
 
 
 /**

@@ -27,8 +27,8 @@ import org.springframework.webflow.execution.RequestContext;
 import com.lucky.sso.login.webflow.constants.AccountsConstants;
 import com.lucky.sso.login.webflow.handler.AccountsUserAuthenticationHandler;
 
-public class UserCheckWebflowEventResolver  extends AbstractCasWebflowEventResolver{
-	
+public class UserCheckWebflowEventResolver extends AbstractCasWebflowEventResolver {
+
 	@Autowired
 	AccountsUserAuthenticationHandler accountsUserAuthenticationHandler;
 
@@ -44,47 +44,49 @@ public class UserCheckWebflowEventResolver  extends AbstractCasWebflowEventResol
 
 	@Override
 	public Set<Event> resolveInternal(RequestContext context) {
-		 try {
-	            final Credential credential = getCredentialFromContext(context);
-	            if (credential != null && accountsUserAuthenticationHandler.supports(credential)) {
-	            	accountsUserAuthenticationHandler.authenticate(credential);
-	            }
-	            
-	            return CollectionUtils.wrapSet(grantUserCredentialToAuthenticationResult(context, credential));
-		 } catch (final Exception e) {
-	            Event event = returnUserCheckExceptionEventIfNeeded(e);
-	            if (event == null) {
-	                event = newEvent(CasWebflowConstants.TRANSITION_ID_ERROR, e);
-	            }
-	            //final HttpServletResponse response = WebUtils.getHttpServletResponseFromExternalWebflowContext(context);
-	            // response.setStatus(HttpStatus.UNAUTHORIZED.value());
-	            return CollectionUtils.wrapSet(event);
-	        }
+		try {
+			final Credential credential = getCredentialFromContext(context);
+			if (credential != null && accountsUserAuthenticationHandler.supports(credential)) {
+				accountsUserAuthenticationHandler.authenticate(credential);
+			}
+
+			return CollectionUtils.wrapSet(grantUserCredentialToAuthenticationResult(context, credential));
+		} catch (final Exception e) {
+			Event event = returnUserCheckExceptionEventIfNeeded(e);
+			if (event == null) {
+				event = newEvent(CasWebflowConstants.TRANSITION_ID_ERROR, e);
+			}
+			// final HttpServletResponse response =
+			// WebUtils.getHttpServletResponseFromExternalWebflowContext(context);
+			// response.setStatus(HttpStatus.UNAUTHORIZED.value());
+			return CollectionUtils.wrapSet(event);
+		}
 	}
 
 	private Event returnUserCheckExceptionEventIfNeeded(final Exception e) {
-        final Exception ex;
-        if (e instanceof AuthenticationException || e instanceof AbstractTicketException || e instanceof FailedLoginException) {
-            ex = e;
-        } else if (e.getCause() instanceof AuthenticationException || e.getCause() instanceof AbstractTicketException) {
-            ex = (Exception) e.getCause();
-        } else {
-            return null;
-        }
-        return newEvent(AccountsConstants.TRANSITION_ID_USER_CHECK_FAILURE, ex);
-    }
-	
-	 /**
-     * Grant user.
-     *
-     * @param context                     the context
-     * @param authenticationResultBuilder the authentication result builder
-     * @param service                     the service
-     * @return the event
-     */
-    protected Event grantUserCredentialToAuthenticationResult(final RequestContext context,
-                                                                    final Credential credential) {
-        WebUtils.putCredential(context, credential);
-        return newEvent(CasWebflowConstants.TRANSITION_ID_SUCCESS);
-    }
+		final Exception ex;
+		if (e instanceof AuthenticationException || e instanceof AbstractTicketException
+				|| e instanceof FailedLoginException) {
+			ex = e;
+		} else if (e.getCause() instanceof AuthenticationException || e.getCause() instanceof AbstractTicketException) {
+			ex = (Exception) e.getCause();
+		} else {
+			return null;
+		}
+		return newEvent(AccountsConstants.TRANSITION_ID_USER_CHECK_FAILURE, ex);
+	}
+
+	/**
+	 * Grant user.
+	 *
+	 * @param context                     the context
+	 * @param authenticationResultBuilder the authentication result builder
+	 * @param service                     the service
+	 * @return the event
+	 */
+	protected Event grantUserCredentialToAuthenticationResult(final RequestContext context,
+			final Credential credential) {
+		WebUtils.putCredential(context, credential);
+		return newEvent(CasWebflowConstants.TRANSITION_ID_SUCCESS);
+	}
 }
