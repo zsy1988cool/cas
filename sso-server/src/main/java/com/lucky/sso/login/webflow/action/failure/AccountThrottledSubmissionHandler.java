@@ -39,11 +39,18 @@ public class AccountThrottledSubmissionHandler {
     private final int failureThreshold;
     private final String applicationCode;
     private final String authenticationFailureCode;
+    
+    private final int recaptchahold;
+    private final int smshold;
+    private final int lockaddseconds;
+    private final int locklimitseconds;
 
     public AccountThrottledSubmissionHandler(final int failureThreshold,
                                                             final int failureRangeInSeconds,
                                                             final DataSource dataSource, final String applicationCode,
-                                                            final String sqlQueryAudit, final String authenticationFailureCode) {
+                                                            final String sqlQueryAudit, final String authenticationFailureCode,
+                                                            final int recaptchahold, final int smshold,
+                                                            final int lockaddseconds, final int locklimitseconds) {
     	this.failureThreshold = failureThreshold;
     	this.applicationCode = applicationCode;
     	this.failureRangeInSeconds = failureRangeInSeconds;
@@ -51,6 +58,11 @@ public class AccountThrottledSubmissionHandler {
         this.sqlQueryAudit = sqlQueryAudit;
         this.authenticationFailureCode = authenticationFailureCode;
         this.jdbcTemplate = new JdbcTemplate(this.dataSource);
+        
+        this.recaptchahold = recaptchahold;
+        this.smshold = smshold;
+        this.lockaddseconds = lockaddseconds;
+        this.locklimitseconds = locklimitseconds;
     }
     
     /**

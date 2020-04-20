@@ -6,6 +6,7 @@ import javax.security.auth.login.CredentialExpiredException;
 import javax.security.auth.login.FailedLoginException;
 
 import org.apereo.cas.authentication.PrincipalException;
+import org.apereo.cas.authentication.RememberMeUsernamePasswordCredential;
 import org.apereo.cas.authentication.adaptive.UnauthorizedAuthenticationException;
 import org.apereo.cas.authentication.exceptions.AccountDisabledException;
 import org.apereo.cas.authentication.exceptions.AccountPasswordMustChangeException;
@@ -20,8 +21,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.webflow.definition.registry.FlowDefinitionRegistry;
 import org.springframework.webflow.engine.ActionState;
 import org.springframework.webflow.engine.Flow;
+import org.springframework.webflow.engine.ViewState;
+import org.springframework.webflow.engine.builder.BinderConfiguration;
 import org.springframework.webflow.engine.builder.support.FlowBuilderServices;
 
+import com.lucky.sso.authentication.credential.AccountCredential;
 import com.lucky.sso.login.webflow.constants.AccountsConstants;
 
 public class AccountLoginWebflowConfigurer extends DefaultLoginWebflowConfigurer {
@@ -104,5 +108,29 @@ public class AccountLoginWebflowConfigurer extends DefaultLoginWebflowConfigurer
         createTransitionForState(action, CasWebflowConstants.TRANSITION_ID_ERROR, AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
         createTransitionForState(action, CasWebflowConstants.TRANSITION_ID_SUCCESS, CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM);
         createTransitionForState(action, CasWebflowConstants.TRANSITION_ID_SUCCESS_WITH_WARNINGS, CasWebflowConstants.VIEW_ID_SHOW_AUTHN_WARNING_MSGS);
+    }
+    
+    /**
+     * Create remember me authn webflow config.
+     *
+     * @param flow the flow
+     */
+    @Override
+    protected void createRememberMeAuthnWebflowConfig(final Flow flow) {
+        if (casProperties.getTicket().getTgt().getRememberMe().isEnabled()) {
+            createFlowVariable(flow, CasWebflowConstants.VAR_ID_CREDENTIAL, RememberMeUsernamePasswordCredential.class);
+            final ViewState state = getState(flow, CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM, ViewState.class);
+            final BinderConfiguration cfg = getViewStateBinderConfiguration(state);
+            cfg.addBinding(new BinderConfiguration.Binding("rememberMe", null, false));
+        } else {
+            createFlowVariable(flow, CasWebflowConstants.VAR_ID_CREDENTIAL, AccountCredential.class);
+        }
+        
+        final ViewState state = (ViewState) flow.getState(CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM);
+        final BinderConfiguration cfg = getViewStateBinderConfiguration(state);
+        cfg.addBinding(new BinderConfiguration.Binding("email", null, true));
+        cfg.addBinding(new BinderConfiguration.Binding("telephone", null, true));
+        cfg.addBinding(new BinderConfiguration.Binding("capcha", null, true));
+        cfg.addBinding(new BinderConfiguration.Binding("capchaEnabled", null, true));
     }
 }

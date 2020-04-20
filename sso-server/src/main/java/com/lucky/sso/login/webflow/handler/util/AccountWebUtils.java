@@ -17,6 +17,7 @@ public class AccountWebUtils {
 	
 	private static final String PARAMETER_LOCK= "loginlocked";
 	private static final String PARAMETER_LOCK_MESSAGE= "loginlocked_message";
+	private static final String PARAMETER_CAPCHA_ENABLED= "capchaEnabled";
 	
 	/**
      * Put login lock status into flow scope.
@@ -27,5 +28,15 @@ public class AccountWebUtils {
     public static void putLoginLocked(final RequestContext context, final Boolean locked, final String message) {
         context.getFlowScope().put(PARAMETER_LOCK, locked);
         context.getFlowScope().put(PARAMETER_LOCK_MESSAGE, message);
+    }
+    
+    /**
+     * Put lcapcha status into flow scope.
+     *
+     * @param context  the context
+     * @param capchaEnabled the capchaEnabled
+     */
+    public static void putCapchaEnabled(final RequestContext context, final Boolean capchaEnabled) {
+        context.getFlowScope().put(PARAMETER_CAPCHA_ENABLED, capchaEnabled);
     }
 }

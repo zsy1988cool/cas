@@ -192,10 +192,11 @@ public class AccoutWebflowConfiguration {
 
     @Bean
     public AccountThrottledSubmissionHandler accountThrottledSubmissionHandler() {
-//    	int recaptchahold = accountWebflowProperties.getRecaptchahold();
-//    	int smshold = accountWebflowProperties.getSmshold();
-//    	int lockaddseconds = accountWebflowProperties.getLockaddseconds();
-//    	int locklimitseconds = accountWebflowProperties.getLocklimitseconds();
+    	final int recaptchahold = 3;
+        final int smshold = 10;
+        final int lockaddseconds = 60;
+        final int locklimitseconds = 1800;
+        
         final ThrottleProperties throttle = casProperties.getAuthn().getThrottle();
         final ThrottleProperties.Failure failure = throttle.getFailure();
         return new AccountThrottledSubmissionHandler(failure.getThreshold(),
@@ -203,6 +204,10 @@ public class AccoutWebflowConfiguration {
             inspektrAuditTrailDataSource(),
             throttle.getAppcode(),
             throttle.getJdbc().getAuditQuery(),
-            failure.getCode());
+            failure.getCode(),
+            recaptchahold,
+            smshold,
+            lockaddseconds,
+            locklimitseconds);
     }
 }

@@ -29,11 +29,18 @@ public class HandleLoginFailureCheckAction extends AbstractAction {
 		}
 		
 		List<Date> failureTimes = accountThrottleSubmissionHandler.accessFailuresDatetimes(username);
+		int failureCount = failureTimes.size();
+
+		// 是否验证码校验
+		int recaptchahold = accountThrottleSubmissionHandler.getRecaptchahold();
+		Boolean capchaEnabled = (failureCount >= recaptchahold);
+		AccountWebUtils.putCapchaEnabled(context, capchaEnabled);
 		
+		// 是否锁定
 		int threshold = accountThrottleSubmissionHandler.getFailureThreshold();
-		Boolean locked = (failureTimes.size() >= threshold);
+		Boolean locked = (failureCount >= threshold);
 		if(locked) {
-			Date firstFailureTime = failureTimes.get(failureTimes.size() - 1);
+			Date firstFailureTime = failureTimes.get(failureCount - 1);
 			Date unlockDateTime = accountThrottleSubmissionHandler.getUnlockDate(firstFailureTime);
 			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String message="解锁时间" + df.format(unlockDateTime);
