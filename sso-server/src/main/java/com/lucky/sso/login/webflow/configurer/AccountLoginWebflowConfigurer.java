@@ -12,6 +12,7 @@ import org.apereo.cas.authentication.exceptions.AccountDisabledException;
 import org.apereo.cas.authentication.exceptions.AccountPasswordMustChangeException;
 import org.apereo.cas.authentication.exceptions.InvalidLoginLocationException;
 import org.apereo.cas.authentication.exceptions.InvalidLoginTimeException;
+import org.apereo.cas.authentication.exceptions.UnresolvedPrincipalException;
 import org.apereo.cas.configuration.CasConfigurationProperties;
 import org.apereo.cas.services.UnauthorizedServiceForPrincipalException;
 import org.apereo.cas.ticket.UnsatisfiedAuthenticationPolicyException;
@@ -26,6 +27,7 @@ import org.springframework.webflow.engine.builder.BinderConfiguration;
 import org.springframework.webflow.engine.builder.support.FlowBuilderServices;
 
 import com.lucky.sso.authentication.credential.AccountCredential;
+import com.lucky.sso.login.webflow.action.captcha.CaptchaErrorException;
 import com.lucky.sso.login.webflow.constants.AccountsConstants;
 
 public class AccountLoginWebflowConfigurer extends DefaultLoginWebflowConfigurer {
@@ -55,6 +57,7 @@ public class AccountLoginWebflowConfigurer extends DefaultLoginWebflowConfigurer
         createTerminateSessionAction(flow);
         createTicketGrantingTicketCheckAction(flow);
         createLoginFailureCheckAction(flow);
+        createHandleCaptchaVerificationFailureAction(flow);
     }
 	
 	 /**
@@ -74,17 +77,16 @@ public class AccountLoginWebflowConfigurer extends DefaultLoginWebflowConfigurer
     }
     
     /**
-     * Create handle captcha verify action.
+     * Create handle captcha verify failure action.
      *
      * @param flow the flow
      */
-    protected void createHandleCaptchaVerificationAction(final Flow flow) {
-        final ActionState handler = createActionState(flow, AccountsConstants.STATE_ID_HANDLE_CAPTCHA_VERIFY,
-        		AccountsConstants.ACTION_ID_CAPTCHA_VERIFICATION_ACTION);
-        createTransitionForState(handler, CaptchaErrorException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
-        createTransitionForState(handler, FailedLoginException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
-        createTransitionForState(handler, AccountNotFoundException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
-        createTransitionForState(handler, UnauthorizedServiceForPrincipalException.class.getSimpleName(), AccountsConstants.STATE_ID_VIEW_USERCHECK_FORM);
+    protected void createHandleCaptchaVerificationFailureAction(final Flow flow) {
+        final ActionState handler = createActionState(flow, AccountsConstants.STATE_ID_HANDLE_CAPTCHA_EXCEPTION,
+        		AccountsConstants.ACTION_ID_CAPTCHA_EXCEPTION_HANDLER);
+        createTransitionForState(handler, CaptchaErrorException.class.getSimpleName(), CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM);
+        createTransitionForState(handler, UnresolvedPrincipalException.class.getSimpleName(), CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM);
+        createTransitionForState(handler, AccountLockedException.class.getSimpleName(), CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM);
         createStateDefaultTransition(handler, CasWebflowConstants.STATE_ID_VIEW_LOGIN_FORM);
     }
 	

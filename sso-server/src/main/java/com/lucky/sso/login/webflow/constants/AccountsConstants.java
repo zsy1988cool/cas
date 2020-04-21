@@ -33,14 +33,24 @@ public interface AccountsConstants {
     String ACTION_ID_HANDLE_LOGIN_FAILURE_CHECK = "handleLoginFailureCheckAction";
     
     /**
-     * State id 'handleCaptchaVerify'.
+     * State id 'handleCaptchaVerification'.
      */
-    String STATE_ID_HANDLE_CAPTCHA_VERIFY = "handleCaptchaVerify";
+    String STATE_ID_HANDLE_CAPTCHA_VERIFY = "handleCaptchaVerification";
     
     /**
      * Action id 'captchaVerificationAction'.
      */
     String ACTION_ID_CAPTCHA_VERIFICATION_ACTION = "captchaVerificationAction";
+    
+    /**
+     * State id 'handleCaptchaException'.
+     */
+    String STATE_ID_HANDLE_CAPTCHA_EXCEPTION = "handleCaptchaException";
+    
+    /**
+     * Action id 'captchaExceptionHandlerAction'.
+     */
+    String ACTION_ID_CAPTCHA_EXCEPTION_HANDLER = "captchaExceptionHandlerAction";
     
     /**
      * The account status 'to activated'.

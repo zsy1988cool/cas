@@ -43,6 +43,7 @@ import org.springframework.webflow.definition.registry.FlowDefinitionRegistry;
 import org.springframework.webflow.engine.builder.support.FlowBuilderServices;
 import org.springframework.webflow.execution.Action;
 
+import com.lucky.sso.login.webflow.action.captcha.CaptchaExceptionHandlerAction;
 import com.lucky.sso.login.webflow.action.captcha.CaptchaVerificationAction;
 import com.lucky.sso.login.webflow.action.captcha.CaptchaVerificationResolver;
 import com.lucky.sso.login.webflow.action.failure.AccountThrottledSubmissionHandler;
@@ -198,6 +199,11 @@ public class AccoutWebflowConfiguration {
     @Bean(name="captchaVerificationAction")
     public Action captchaVerificationAction() {
         return new CaptchaVerificationAction(initialCaptchaVerificationResolver());
+    }
+    
+    @Bean(name="captchaExceptionHandlerAction")
+    public Action captchaExceptionHandlerAction() {
+    	return new CaptchaExceptionHandlerAction();
     }
     
     // 错误次数处理

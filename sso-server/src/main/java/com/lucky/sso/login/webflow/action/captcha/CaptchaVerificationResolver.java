@@ -2,6 +2,8 @@ package com.lucky.sso.login.webflow.action.captcha;
 
 import java.util.Set;
 
+import javax.security.auth.login.AccountLockedException;
+
 import org.apereo.cas.CentralAuthenticationService;
 import org.apereo.cas.authentication.AuthenticationServiceSelectionPlan;
 import org.apereo.cas.authentication.AuthenticationSystemSupport;
@@ -20,6 +22,7 @@ import org.springframework.webflow.execution.Event;
 import org.springframework.webflow.execution.RequestContext;
 
 import com.lucky.sso.authentication.credential.AccountCredential;
+import com.lucky.sso.login.webflow.handler.util.AccountWebUtils;
 
 public class CaptchaVerificationResolver extends AbstractCasWebflowEventResolver {
 
@@ -32,6 +35,22 @@ public class CaptchaVerificationResolver extends AbstractCasWebflowEventResolver
 				warnCookieGenerator, authenticationRequestServiceSelectionStrategies,
 				multifactorAuthenticationProviderSelector);
 	}
+	
+	protected void handleCaptchaVerification(AccountCredential accountCredential) {
+		String capcha = accountCredential.getCapcha();
+		ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+		String capchaFromSession = attributes.getRequest().getSession().getAttribute("captcha_code").toString();
+
+		if (capcha == null || !capcha.equalsIgnoreCase(capchaFromSession)) {
+			throw new CaptchaErrorException("Sorry, capcha not correct !");
+		}
+	}
+	
+	protected void handleAccoutLock(RequestContext context) throws AccountLockedException {
+		Boolean locked = AccountWebUtils.getLoginLocked(context);
+		if(locked != null && locked) 
+			throw new AccountLockedException();
+	}
 
 	@Override
 	public Set<Event> resolveInternal(RequestContext context) {
@@ -40,15 +59,14 @@ public class CaptchaVerificationResolver extends AbstractCasWebflowEventResolver
 			if(credential == null || !(credential instanceof AccountCredential)) {
 				throw new UnresolvedPrincipalException();
 			}
-
-			AccountCredential accountCredential = (AccountCredential)credential;
-			String capcha = accountCredential.getCapcha();
-			ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-			String capchaFromSession = attributes.getRequest().getSession().getAttribute("captcha_code").toString();
-	
-			if (capcha == null || !capcha.equalsIgnoreCase(capchaFromSession)) {
-				throw new CaptchaErrorException("Sorry, capcha not correct !");
-			}
+			
+			handleAccoutLock(context);
+			
+			Boolean capchaEnabled = AccountWebUtils.getCapchaEnabled(context);
+			if(capchaEnabled == null || !capchaEnabled)
+				return CollectionUtils.wrapSet(newEvent(CasWebflowConstants.TRANSITION_ID_SUCCESS));
+			
+			handleCaptchaVerification((AccountCredential)credential);
 			return CollectionUtils.wrapSet(newEvent(CasWebflowConstants.TRANSITION_ID_SUCCESS));
 		} catch (final Exception e) {
 			Event event = newEvent(CasWebflowConstants.TRANSITION_ID_ERROR, e);

@@ -31,6 +31,16 @@ public class AccountWebUtils {
     }
     
     /**
+     * Get lock status from flow scope.
+     *
+     * @param context  the context
+     * return the locked status
+     */
+    public static Boolean getLoginLocked(final RequestContext context) {
+        return (Boolean)context.getFlowScope().get(PARAMETER_LOCK);
+    }
+    
+    /**
      * Put lcapcha status into flow scope.
      *
      * @param context  the context
